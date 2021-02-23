@@ -1,0 +1,219 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+body{
+    background:rgb(4, 29, 29);
+    width: 95%;
+    margin: auto;
+}
+
+/* header */
+
+header{
+    display: flex;
+    align-items: center;
+    background: rgb(0, 87, 87);
+}
+
+header h1{
+    color: white;
+    padding: 1%;
+}
+
+.usuarios{
+    margin-left: auto;
+}
+
+.usuarios a{
+    text-decoration: none;
+    padding: 10px;
+    margin: 0 10px;
+    color: white;
+}
+
+/* btn user header */
+
+.btn-login{
+    background: rgb(0, 167, 0);
+    transition: background 0.6s;
+}
+.btn-login:hover{
+    background: rgb(0, 73, 0) ;
+}
+
+.btn-register{
+    background: grey;
+    transition: background 0.6s;
+}
+.btn-register:hover{
+    background: rgb(80, 80, 80) ;
+}
+
+/* nav */
+nav > ul{
+    list-style: none;
+    display: flex;
+}
+
+nav > ul > li > a{
+    text-decoration: none;
+    display: block;
+    padding: 10px 20px;
+    background: green;
+    color: white;
+    border-right: 1px solid white;
+    transition: background 0.6s;
+}
+
+nav > ul > li > a:hover{
+    background:rgb(0, 66, 0);
+}
+
+/* sublista nav */
+
+.localidad{
+    position: relative;
+}
+
+.list-localidades{
+    position: absolute;
+    flex-direction: column;
+    background: gray;
+    width: 100%;
+    text-align: center;
+    z-index: 1;
+    display: none;
+}
+
+.list-localidades > li{
+    padding: 10px 0;
+    list-style: none;
+}
+
+.list-localidades > li > a{
+    text-decoration: none;
+    color: white;
+}
+
+.localidad:hover .list-localidades{
+    display: block;
+}
+
+/* section */
+
+section{
+    margin-top: 20px;
+}
+
+/* categorias */
+
+.categorias{
+    margin-bottom: 20px;
+}
+.categorias hr{
+    width: 80%;
+    margin: auto;
+}
+.categorias h1{
+    text-align: center;
+    color: wheat;
+    background: rgb(0, 75, 75);
+    box-shadow: 0 0 15px black;
+    padding: 7px;
+    margin: 40px 0 15px;
+}
+
+/* articulos */
+
+article{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+    
+}
+article .comercios{
+    position: relative;
+    text-align: center;
+    background: linear-gradient( to bottom left, rgba(0, 128, 128, 0.555),  rgba(0, 0, 0, 0.425));
+    box-shadow: 0 0 15px;
+}
+article .comercios h2{
+    background: rgb(0, 54, 54);
+    color: white;
+    padding: 10px 0;
+}
+article .comercios p{
+    color: wheat;
+}
+
+.comercios h3{
+    color: wheat;
+    margin: 10px 0;
+}
+.comercios h3 a{
+    text-decoration: none;
+    color: white ;
+}
+
+article img{
+    width: 150px;
+    margin: 10px 0;
+}
+
+/* muestra de productos */
+
+.productos{
+    display: flex;
+    width: 90%;
+    background: rgb(14, 43, 43);
+    margin: auto;
+    margin-bottom: 10px;
+    justify-content: space-around;
+}
+.productos img{
+    width: 50px;
+    height: 50px;
+}
+
+/* boton favorito */
+.btn-favorito{
+    position: absolute;
+    top: 0%;
+    right: 0;
+    text-decoration: none;
+    background: greenyellow;
+    color: black;
+    padding: 10px;
+    box-shadow: -5px 5px 10px;
+}
+
+.btn-favorito:hover{
+    background: rgb(137, 216, 18);
+}
+
+/*  footer */
+
+footer h3{
+    text-align: center;
+    color: white;
+    padding: 10px 0;
+}
+
+/* Adaptado a tablets */
+
+@media screen and (max-width: 1024px){
+    article{
+        grid-template-columns: 1fr 1fr;   
+    }
+}
+
+/* Adaptadap a mobil */
+
+@media screen and (max-width:720px){
+    article{
+        grid-template-columns: 1fr;   
+    }
+}

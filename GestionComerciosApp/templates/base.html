@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestion comercios</title>
+    <link rel="stylesheet" href="{% static 'estilos.css' %}">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>Gestión Comercios</h1>
+        <div class="usuarios">
+            <a class="btn-login" href="#">Inicar sesión</a>
+            <a class="btn-register" href="#">Regístrate</a>
+        </div>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#">Inicio</a></li>
+            <li class="localidad">
+                <a href="#">Localidades</a>
+                <ul class="list-localidades">
+                    <li><a href="">Resistencia</a></li>
+                    <li><a href="">Machagai</a></li>
+                    <li><a href="">Barranquera</a></li>
+                    <li><a href="">Mas...</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Comercios</a></li>
+            <li><a href="#">info</a></li>
+            <li><a href="#">Contactanos</a></li>
+        </ul>
+    </nav>
+
+    {% block section %}
+
+    {% endblock %}
+
+    <footer>
+        <h3>&copy; 2021 Gestion Comercios</h3>
+    </footer>
+</body>
+</html>
