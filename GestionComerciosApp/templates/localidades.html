@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{%block section%}
+
+{% for lugar in lugares %}
+   
+    <li>{{lugar}}</li>
+
+{% endfor %}
+
+{% endblock %}
