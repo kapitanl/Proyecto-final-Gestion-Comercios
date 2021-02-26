@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'login-estilos.css' %}">
+    <title>Regístrate</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="contenedor">
+        <section class="area-login">
+                        <h1>Gestión Comercios</h1>
+                        <form action="" method="POST">
+                                {% csrf_token %}
+                                {% if form.errors %}
+                                    <p>Datos incorrectos</p>
+                                {% endif %}
+                                <label for="">Ingrese un Nombre de Usueario:</label>
+                                <input type="text" name='username'>
+                                <label for="">Contraseña:</label>
+                                <input type="password" name='password1'>
+                                <label for="">Confirmar Contraseña:</label>
+                                <input type="password" name='password2'>
+                                <button type="submit">Regístrate</button>
+                                
+                        </form>
+                        <h2>¿Ya Tienes una cuenta?</h2>
+                        <a href="{% url 'login' %}">Inicia Sesión</a>
+        </section>
+    </div>
+
+    <footer>
+        <h3>&copy; 2021 Gestion Comercios</h3>
+    </footer>
+
+</body>
+</html>
