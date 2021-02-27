@@ -9,3 +9,4 @@ def home(request):
 
 def localidades(request):
     return render(request, 'localidades.html')
+
