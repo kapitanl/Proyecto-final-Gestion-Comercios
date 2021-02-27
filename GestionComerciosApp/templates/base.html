@@ -24,14 +24,14 @@
     </header>
     <nav>
         <ul>
-            <li><a href="#">Inicio</a></li>
+            <li><a href="{% url 'home' %}">Inicio</a></li>
             <li class="localidad">
                 <a href="#">Localidades</a>
                 <ul class="list-localidades">
                     <li><a href="">Resistencia</a></li>
                     <li><a href="">Machagai</a></li>
                     <li><a href="">Barranquera</a></li>
-                    <li><a href="">Mas...</a></li>
+                    <li><a href="{% url 'localidades' %}">Mas...</a></li>
                 </ul>
             </li>
             <li><a href="#">Comercios</a></li>
