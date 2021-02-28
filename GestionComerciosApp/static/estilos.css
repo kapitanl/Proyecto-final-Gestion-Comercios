@@ -217,3 +217,20 @@ footer h3{
         grid-template-columns: 1fr;   
     }
 }
+
+/*color de los links de comercios y localidades*/
+a {
+    color: rgb(11, 190, 11);
+}
+h3{
+    color : white;
+    padding: 20px 0;
+
+}
+.grid{
+    display: principal;
+    grid-template-columns: 50% 50%;
+}
+.grid .cebolla{
+    background-color:rgba(0, 0, 0, 0.425);
+}

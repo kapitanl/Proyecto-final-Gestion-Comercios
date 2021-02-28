@@ -1,0 +1,12 @@
+{% extends 'base.html'%}
+{% load static %}
+
+{% block section %}
+
+<ul>
+    {% for f in form %}
+    <li><a href="">{{ f.comercio }}</a></li>
+    {% endfor %}
+</ul>
+
+{% endblock %}
