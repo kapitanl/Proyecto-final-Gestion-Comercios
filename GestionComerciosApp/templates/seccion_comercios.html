@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block section %}
+
+<div class="contenedor">
+    <section>
+        <div class="categorias">
+                {% for c in comer %}
+                <h1>{{ c.nombre_del_comercio }}</h1>
+                {% endfor %}
+                <article class="articulo-productos">
+                    {% for f in form %}
+                    <div class="lista-productos"> 
+                        <img src="{{ f.img_producto.url }}" alt="">
+                        <h3>{{ f.nombre_producto }}</h3>
+                        <h2>${{ f.precio_producto }}</h2>
+                    </div>
+                    {% endfor %} 
+                </article>
+        </div>
+    </section>
+    <aside>
+        <div class="barra-lateral">
+            <h2>Categorias</h2>
+            <ul>
+                <li><a href="">Destorilladores</a></li>
+                <li><a href="">Luces</a></li>
+                <li><a href="">Pinzas</a></li>
+                <li><a href="">Tornillos</a></li>
+            </ul>
+        </div>
+    </aside>
+</div>
+
+{% endblock %}

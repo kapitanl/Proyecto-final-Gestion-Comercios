@@ -15,11 +15,12 @@ body{
 header{
     display: flex;
     align-items: center;
-    background: rgb(0, 87, 87);
+    background: rgb(3, 46, 46);
+    box-shadow: 0 0 20px;
 }
 
 header h1{
-    color: white;
+    color: rgb(219, 219, 219);
     padding: 1%;
 }
 
@@ -113,14 +114,10 @@ section{
 .categorias{
     margin-bottom: 20px;
 }
-.categorias hr{
-    width: 80%;
-    margin: auto;
-}
 .categorias h1{
     text-align: center;
-    color: wheat;
-    background: rgb(0, 75, 75);
+    color: rgb(168, 168, 168);
+    background: rgb(0, 41, 41);
     box-shadow: 0 0 15px black;
     padding: 7px;
     margin: 40px 0 15px;
@@ -134,16 +131,18 @@ article{
     gap: 20px;
     
 }
-article .comercios{
+.comercios{
     position: relative;
     text-align: center;
-    background: linear-gradient( to bottom left, rgba(0, 128, 128, 0.555),  rgba(0, 0, 0, 0.425));
+    background: rgb(6, 63, 63);
     box-shadow: 0 0 15px;
+    padding: 10px;
 }
 article .comercios h2{
     background: rgb(0, 54, 54);
-    color: white;
+    color: rgb(194, 194, 194);
     padding: 10px 0;
+    box-shadow: 0 0 5px black;
 }
 article .comercios p{
     color: wheat;
@@ -153,16 +152,47 @@ article .comercios p{
     color: wheat;
     margin: 10px 0;
 }
-.comercios h3 a{
+.comercios > h3 > a{
     text-decoration: none;
-    color: white ;
+    color: rgb(202, 202, 202) ;
 }
-
+.btn-localidad{
+    text-decoration: none;
+    color: gray ;
+}
 article img{
     width: 150px;
     margin: 10px 0;
 }
 
+/* seccion de los producos */
+
+.articulo-productos{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    gap: 10px;
+}
+
+.lista-productos{
+    background: rgb(1, 61, 61);
+    box-shadow: 0 0 15px black;
+    padding: 5px;
+    text-align: center;
+    color: rgb(173, 173, 173);
+}
+
+.lista-productos > img{
+    width: 150px;
+}
+
+.lista-productos >h3{
+    margin-bottom: 15px;
+}
+
+.lista-productos > h2{
+    color: green;
+    text-shadow: 0 0 5px black;
+}
 /* muestra de productos */
 
 .productos{
@@ -187,7 +217,7 @@ article img{
     background: greenyellow;
     color: black;
     padding: 10px;
-    box-shadow: -5px 5px 10px;
+    box-shadow: -5px 5px 10px black;
 }
 
 .btn-favorito:hover{
@@ -202,6 +232,40 @@ footer h3{
     padding: 10px 0;
 }
 
+/*  Area del contenedor */
+.contenedor{
+    display: grid;
+    grid-template-columns: 85% 15%;
+    gap: 10px;
+}
+
+/* barra lateral */
+
+aside{
+    background: rgb(2, 44, 44);
+    padding: 5px;
+    margin-top: 60px;
+    box-shadow: 0 0 10px;
+}
+
+.barra-lateral{
+    margin-top: 20px;
+    text-align: center;
+}
+
+.barra-lateral h2{
+    color: rgb(167, 167, 167);
+}
+
+.barra-lateral > ul > li{
+    list-style: none;
+}
+.barra-lateral > ul > li > a{
+    display: block;
+    text-decoration: none;
+    color: gray;
+    padding: 10px 0;
+}
 /* Adaptado a tablets */
 
 @media screen and (max-width: 1024px){
