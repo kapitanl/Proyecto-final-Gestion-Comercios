@@ -3,96 +3,59 @@
 {% load static %}
 
 {% block section %}
+<div class="contenedor">
     <section>
         <div class="categorias">
                 <h1>Comercios mas visitados</h1>
                 <article>
-                    
+                    {% for f in form %}
                     <div class="comercios">
                         <a class="btn-favorito" href="#">Favorito</a>
-                        <h2>Comercio 1 </h2>
-                        <img src="https://elcomodorense.net/wp-content/uploads/2020/08/IMG-20200822-WA0038.jpg" alt="">
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, voluptatem? Repellendus nemo ea error ipsa fuga asperiores. Cupiditate culpa, esse reiciendis odio molestiae iusto? Aspernatur nesciunt possimus excepturi iure hic!
-                        </p>
+                        <h2>{{ f.nombre_del_comercio }}</h2>
+                        <img src="{{ f.img_comercio.url }}" alt="">
+                        <p>{{ f.descripcion }}</p>
                         <h3>Mejores precios en productos</h3>
                         <div class="productos">
-                            <div><img src="https://lh3.googleusercontent.com/proxy/9H2iaeH9kAz7onivhgDFx2pWre4Oi9kExHGTGWgh7CqiDkYHrObu83F4cliGMbJb11EB5AstR-yNnyqJHVLDvBMPw23SL_yyAhmuCR6H0ucBNAtP0w" alt="productos"></div>
                             <div><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5Aawqj3thLFjXdyQp2hd1pA4b3ZEkSJbZOg&usqp=CAU" alt="productos"></div>
                             <div><img src="https://vivecompras.com/media/products/YOGURT_FAMILIAR.jpg" alt="productos"></div>
                         </div>
-                        <h3><a href="">Saber mas...</a></h3>
+                        <h3><a href="{% url 'seccionComercio' f.id %}">Saber mas...</a></h3>
+                        <a class="btn-localidad" href="">{{ f.localidad }}</a>
                     </div>
-
-                    <div class="comercios">
-                        <a class="btn-favorito" href="#">Favorito</a>
-                        <h2>Comercio 2 </h2>
-                        <img src="https://www.sol915.com.ar/wp-content/uploads/2013/12/2013-12-11_19357_la-provincia-brindara-apoyo-a-los-comercios-afectados-por-los-hechos-delictivos-de-los-ultimos-dias-1.jpg" alt="">
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, voluptatem? Repellendus nemo ea error ipsa fuga asperiores. Cupiditate culpa, esse reiciendis odio molestiae iusto? Aspernatur nesciunt possimus excepturi iure hic!
-                        </p>
-                        <h3>Mejores precios en productos</h3>
-                        <div class="productos">
-                            <div><img src="https://lh3.googleusercontent.com/proxy/9H2iaeH9kAz7onivhgDFx2pWre4Oi9kExHGTGWgh7CqiDkYHrObu83F4cliGMbJb11EB5AstR-yNnyqJHVLDvBMPw23SL_yyAhmuCR6H0ucBNAtP0w" alt="productos"></div>
-                            <div><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5Aawqj3thLFjXdyQp2hd1pA4b3ZEkSJbZOg&usqp=CAU" alt="productos"></div>
-                            <div><img src="https://vivecompras.com/media/products/YOGURT_FAMILIAR.jpg" alt="productos"></div>
-                        </div>
-                        <h3><a href="">Saber mas...</a></h3>
-                    </div>
-
-                    <div class="comercios">
-                        <a class="btn-favorito" href="#">Favorito</a>
-                        <h2>Comercio 3 </h2>
-                        <img src="http://fralo.com.ar/wp-content/uploads/2020/04/IMG-20200428-WA0050.jpg" alt="">
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, voluptatem? Repellendus nemo ea error ipsa fuga asperiores. Cupiditate culpa, esse reiciendis odio molestiae iusto? Aspernatur nesciunt possimus excepturi iure hic!
-                           
-                        </p>
-                        <h3>Mejores precios en productos</h3>
-                        <div class="productos">
-                            <div><img src="https://lh3.googleusercontent.com/proxy/9H2iaeH9kAz7onivhgDFx2pWre4Oi9kExHGTGWgh7CqiDkYHrObu83F4cliGMbJb11EB5AstR-yNnyqJHVLDvBMPw23SL_yyAhmuCR6H0ucBNAtP0w" alt="productos"></div>
-                            <div><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5Aawqj3thLFjXdyQp2hd1pA4b3ZEkSJbZOg&usqp=CAU" alt="productos"></div>
-                            <div><img src="https://vivecompras.com/media/products/YOGURT_FAMILIAR.jpg" alt="productos"></div>
-                        </div>
-                        <h3><a href="">Saber mas...</a></h3>
-                    </div>
-            </article>
+                    {% endfor %} 
+                </article>
         </div>
         <div class="categorias">
             
             <h1>Comercios con mejores precios</h1>
             <article>
-                <div class="comercios">
-                    <a class="btn-favorito" href="#">Favorito</a>
-                    <h2>Comercio 1 </h2>
-                    <img src="https://elcomodorense.net/wp-content/uploads/2020/08/IMG-20200822-WA0038.jpg" alt="">
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, voluptatem? Repellendus nemo ea error ipsa fuga asperiores. Cupiditate culpa, esse reiciendis odio molestiae iusto? Aspernatur nesciunt possimus excepturi iure hic!
-                        
-                    </p>
-                    <h3><a href="">Saber mas...</a></h3>
-                </div>
-                <div class="comercios">
-                    <a class="btn-favorito" href="#">Favorito</a>
-                    <h2>Comercio 2 </h2>
-                    <img src="https://www.sol915.com.ar/wp-content/uploads/2013/12/2013-12-11_19357_la-provincia-brindara-apoyo-a-los-comercios-afectados-por-los-hechos-delictivos-de-los-ultimos-dias-1.jpg" alt="">
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, voluptatem? Repellendus nemo ea error ipsa fuga asperiores. Cupiditate culpa, esse reiciendis odio molestiae iusto? Aspernatur nesciunt possimus excepturi iure hic!
-                       
-                    </p>
-                    <h3><a href="">Saber mas...</a></h3>
-                </div>
-                <div class="comercios">
-                    <a class="btn-favorito" href="#">Favorito</a>
-                    <h2>Comercio 3 </h2>
-                    <img src="http://fralo.com.ar/wp-content/uploads/2020/04/IMG-20200428-WA0050.jpg" alt="">
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, voluptatem? Repellendus nemo ea error ipsa fuga asperiores. Cupiditate culpa, esse reiciendis odio molestiae iusto? Aspernatur nesciunt possimus excepturi iure hic!
-                        
-                    </p>
-                    <h3><a href="">Saber mas...</a></h3>
-                </div>
-        </article>
+                {% for f in form %}
+                    <div class="comercios">
+                        <a class="btn-favorito" href="#">Favorito</a>
+                        <h2>{{ f.nombre_del_comercio }}</h2>
+                        <img src="{{ f.img_comercio.url }}" alt="">
+                        <p>{{ f.descripcion }}</p>
+                        <h3>Mejores precios en productos</h3>
+                        <div class="productos">
+                            <div><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5Aawqj3thLFjXdyQp2hd1pA4b3ZEkSJbZOg&usqp=CAU" alt="productos"></div>
+                            <div><img src="https://vivecompras.com/media/products/YOGURT_FAMILIAR.jpg" alt="productos"></div>
+                        </div>
+                        <h3><a href="{% url 'seccionComercio' f.id %}">Saber mas...</a></h3>
+                        <a class="btn-localidad" href="">{{ f.localidad }}</a>
+                    </div>
+                    {% endfor %} 
+            </article>
     </div>
     </section>
+    <aside>
+        <div class="barra-lateral">
+            <h2>Categorias</h2>
+            <ul>
+                <li><a href="">Comercios mas visitados</a></li>
+                <li><a href="">Comercios con mejores precios</a></li>
+            </ul>
+        </div>
+    </aside>
+</div>
+    
 {% endblock %}
