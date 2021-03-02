@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="{% static 'estilos.css' %}">
     <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{% static 'listas.css' %}">
 </head>
 <body>
     <header>
@@ -34,9 +35,9 @@
                     <li><a href="{% url 'localidades' %}">Mas...</a></li>
                 </ul>
             </li>
-            <li><a href="#">Comercios</a></li>
-            <li><a href="#">info</a></li>
-            <li><a href="#">Contactanos</a></li>
+            <li><a href="{% url 'comercios'  %}">Comercios</a></li>
+            <li><a href="{% url 'info'  %}">info</a></li>
+            <li><a href="{% url 'contactanos'  %}">Contactanos</a></li>
         </ul>
     </nav>
 
