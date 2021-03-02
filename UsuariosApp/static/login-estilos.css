@@ -17,7 +17,7 @@ body{
 .area-login{
     text-align: center;
     width: 400px;
-    margin: 5% auto;
+    margin: 2% auto;
 
 }
 
@@ -27,12 +27,34 @@ h1{
     padding: 10px 0;
 }
 
-a{
+.btn-login{
     display: inline-block;
     color: black;
     background: gray;
     text-decoration: none;
     padding: 10px 5px;
+    margin-top: 10px;
+    transition: background 0.6s;
+}
+.btn-login:hover{
+    background: rgb(99, 99, 99);
+}
+.btn-registrar{
+    display: inline-block;
+    color: black;
+    background: gray;
+    text-decoration: none;
+    padding: 10px 5px;
+    margin-top: 10px;
+    transition: background 0.6s;
+}
+.btn-registrar:hover{
+    background: rgb(99, 99, 99);
+}
+.btn-volver{
+    display: inline-block;
+    color: white;
+    text-decoration: none;
     margin-top: 10px;
 
 }
@@ -66,6 +88,11 @@ button{
     margin: auto;
     color: white;
     margin-top: 10px;
+    cursor: pointer;
+    transition: background 0.6s;
+}
+button:hover{
+    background: rgb(0, 87, 0);
 }
 
 p{
