@@ -40,3 +40,10 @@ def registro(request):
 def logout(request):
     to_logout(request)
     return redirect('/')
+
+
+def perfil(request):
+    if request.user.is_authenticated:
+        return render(request, 'perfil.html')
+    else:
+        return redirect('login')

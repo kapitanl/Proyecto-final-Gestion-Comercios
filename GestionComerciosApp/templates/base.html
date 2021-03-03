@@ -15,7 +15,7 @@
         <h1>Gestión Comercios</h1>
         <div class="usuarios">
             {% if request.user.is_authenticated %}
-                <a class="btn-login" href="#">{{ request.user.username }}</a>
+                <a class="btn-login" href="{% url 'perfil' %}">{{ request.user.username }}</a>
                 <a class="btn-register" href="{% url 'logout'  %}">Cerrar sesión</a>
             {% else %}
                 <a class="btn-login" href="{% url 'login' %}">Iniciar sesión</a>
