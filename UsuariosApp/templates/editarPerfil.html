@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block section %}
+
+<section class="section-editarPerfil" >
+        <form action=""  method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <h2>Editar Imagen de perfil</h2>
+            <div class="cont-img">
+                {% if img %}
+                {% for i in img %}
+                    <img  class="perfiladit-img" src="{{ i.img_perfil.url }}" alt="" >
+                {% endfor %}
+            {% else %}
+                <img  class="perfiladit-img" src="{% static 'img/user/default-user-img.jpg' %}" alt="">
+            {% endif %}
+            <br>
+            <div class="btn-edit-img"><p>Editar Imagen</p><input  type="file" name="img_perfil" ></div>
+            
+            <br>
+
+            <button type="submit" >Cambiar</button>
+            </div>
+            
+
+            
+
+        </form>
+</section>
+
+
+
+{% endblock %}
