@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .models import PostDeComerciosForms, ProductosForms,ComercioForms,LocalidadesForms
+from .models import PostDeComerciosForms, ProductosForms,ComercioForms,LocalidadesForms, CategoriaProductos
 from UsuariosApp.models import ImgPerfil
 # Create your views here.
 
@@ -19,10 +19,17 @@ def localidades(request):
 
 def seccionComercio(request, id):
     if request.user.is_authenticated:
-        comercio = PostDeComerciosForms.objects.filter(id=id)
-        form = ProductosForms.objects.filter(comercio_pertenece=id)
+        #imagen de perfil del usuario
         img_perfil = ImgPerfil.objects.filter(usuario=request.user)
-        return render(request, 'seccion_comercios.html',{'form':form, 'comer':comercio,'img':img_perfil})
+        # obtine el nombre del comercio
+        comercio = PostDeComerciosForms.objects.filter(id=id)
+        # ordena por categoria 
+        categoria = CategoriaProductos.objects.filter(pertenece=id)
+        print(categoria)
+        # obtine los productos del comercio 
+        form = ProductosForms.objects.filter(comercio_pertenece=id)
+        
+        return render(request, 'seccion_comercios.html',{'form':form, 'comer':comercio,'img':img_perfil,'cat':categoria})
     else:
         comercio = PostDeComerciosForms.objects.filter(id=id)
         form = ProductosForms.objects.filter(comercio_pertenece=id)
@@ -37,3 +44,14 @@ def info(request):
 
 def contactanos(request):
     return render(request, 'contactanos.html')
+
+def categoriaDeProductos(request, id):
+    if request.user.is_authenticated:
+        # imagen de perfil del usuario 
+        img_perfil = ImgPerfil.objects.filter(usuario=request.user)
+
+        # muestra lo que tine la categoria 
+        lista = CategoriaProductos.objects.filter(id=id)
+        return render(request, 'categorias.html',{'img':img_perfil, 'lista':lista})
+    else:
+        return render(request, 'categorias.html',)

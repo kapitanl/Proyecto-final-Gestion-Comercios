@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block section %}
+
+
+    
+
+
+    <div class="contenedor">
+        <section>
+            <div class="categorias">
+                    {% for c in lista %}
+                    <h1>{{ c.pertenece }}</h1>
+                    {% endfor %}
+                    <article class="articulo-productos">
+                      {% for c in lista %}
+                        {% for p in c.add_producots.all %}
+                            <div class="lista-productos"> 
+                                <img src="{{ p.img_producto.url }}" alt="">
+                                <h3>{{ p.nombre_producto }}</h3>
+                                <h2>${{ p.precio_producto }}</h2>
+                            </div>
+
+                        {% endfor %}
+                    {% endfor %}
+                    </article>
+            </div>
+        </section>
+    </div>
+
+    
+{% endblock  %}
+
+    
