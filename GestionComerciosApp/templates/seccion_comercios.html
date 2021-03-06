@@ -25,10 +25,9 @@
         <div class="barra-lateral">
             <h2>Categorias</h2>
             <ul>
-                <li><a href="">Destorilladores</a></li>
-                <li><a href="">Luces</a></li>
-                <li><a href="">Pinzas</a></li>
-                <li><a href="">Tornillos</a></li>
+                {% for c in cat %}
+                            <li><a href="{% url 'categoriaDeProductos'  c.id   %}">{{ c.nom_categoria_productos }}</a></li>
+                {% endfor %} 
             </ul>
         </div>
     </aside>
