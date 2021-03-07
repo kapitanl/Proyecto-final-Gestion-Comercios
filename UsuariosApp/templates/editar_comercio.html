@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block section %}
+
+    
+<section class="sectin-add-comercio">
+    <form action="" method="POST"  enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form }}
+        <button type="submit" >Editar</button>
+    </form>
+</section>
+
+
+{% endblock %}

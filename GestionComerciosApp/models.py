@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.contrib.auth.models import User
 # Create your models here.
 
 class LocalidadesForms(models.Model):
@@ -15,6 +15,7 @@ class ComercioForms(models.Model):
         return self.comercio
 
 class PostDeComerciosForms(models.Model):
+    post_user = models.ForeignKey(User, on_delete=models.CASCADE)
     nombre_del_comercio = models.CharField(max_length=100)
     tipo_comercio = models.ForeignKey(ComercioForms, on_delete=models.CASCADE)
     descripcion = models.TextField()

@@ -3,8 +3,46 @@
 {% load static %}
 
 {% block section %}
+
 <section class="section-perfil" >
-    <h1>Favoritos</h1>
-    <h2>Aun No hay Favoritos </h2>
+    <h1>Mis comercios</h1>
+    {% if comercios %}
+        {% for c in comercios %}
+            <div class="list-comercios" >
+                <h2> {{ c.nombre_del_comercio }} </h2>
+                <div class="botones-comercio">
+                    <a class="btn-agregar" href="{% url 'add_productos' c.id %}">Agregar productos</a>
+                    <a class="btn-editar" href="{% url 'editar_comercio' c.id %}">Editar</a>
+                    <a class="btn-eliminar" href="#" onclick="confirmacionEliminacion({{c.id}})">Eliminar</a>
+                </div>
+               
+            </div>
+            <div class="vista-productos">
+                {% for p in productos %}
+                   
+                        {% if c.id == p.comercio_pertenece_id %}
+                            <div class="lista-productos">
+                                <img src="{{ p.img_producto.url }}" alt="">
+                                <h3>{{ p.nombre_producto }}</h3>
+                                <h2>${{ p.precio_producto }}</h2>
+                            </div>
+                            {% endif %}
+            
+                {% endfor %}
+            </div>
+            
+        {% endfor %}
+        
+    {% else %}
+        <h3>Aun No hay comercios </h3>
+    {% endif %}
+
+    
 </section>
+
 {% endblock %}
+
+    {% block script %}
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="{% static 'js/confirmacion.js' %}"></script>
+    {% endblock %}

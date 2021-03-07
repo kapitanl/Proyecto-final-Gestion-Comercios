@@ -4,27 +4,33 @@
 
 {% block section %}
 
-<div class="contenedor">
+<div class="contenedor-seccion-comercios">
     <section>
-        <div class="categorias">
+        <div class="contenedor-producots">
                 {% for c in comer %}
                 <h1>{{ c.nombre_del_comercio }}</h1>
                 {% endfor %}
                 <article class="articulo-productos">
                     {% for f in form %}
                     <div class="lista-productos"> 
-                        <img src="{{ f.img_producto.url }}" alt="">
                         <h3>{{ f.nombre_producto }}</h3>
+                        <img src="{{ f.img_producto.url }}" alt="">
+                        
                         <h2>${{ f.precio_producto }}</h2>
                     </div>
                     {% endfor %} 
                 </article>
         </div>
     </section>
-    <aside>
+    <aside class="aside-comercios">
         <div class="barra-lateral">
             <h2>Categorias</h2>
             <ul>
+                <li ><a href="">ddfdfdfdfdsf</a> </li>
+                <li ><a href="">ddfdfdfdfdsf</a> </li>
+                <li ><a href="">ddfdfdfdfdsf</a> </li>
+                <li ><a href="">ddfdfdfdfdsf</a> </li>
+                <li ><a href="">ddfdfdfdfdsf</a> </li>
                 {% for c in cat %}
                             <li><a href="{% url 'categoriaDeProductos'  c.id   %}">{{ c.nom_categoria_productos }}</a></li>
                 {% endfor %} 
