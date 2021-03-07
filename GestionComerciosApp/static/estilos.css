@@ -320,12 +320,59 @@ aside{
     box-shadow: 0 0 15px black;
     padding: 5px;
 }
+.list-comercios{
+    margin: 20px auto;
+    display: flex;
+    background: gray;
+    align-items: center;
+    width: 90%;
+    padding: 10px;
+}
 
-.section-perfil > h2{
+.list-comercios > .botones-comercio{
+    margin-left: auto;
+  
+}
+
+.list-comercios > .botones-comercio > .btn-editar{
+    padding: 5px;
+    background: goldenrod;
+    color: black;
+    text-decoration: none;
+    
+}
+.list-comercios > .botones-comercio > .btn-eliminar{
+    padding: 5px;
+    background: rgb(112, 9, 9);
+    color: white;
+    text-decoration: none;
+    
+}
+.list-comercios > .botones-comercio > .btn-agregar{
+    padding: 5px;
+    background: green;
+    color: white;
+    text-decoration: none;
+    
+}
+
+.section-perfil > .list-comercios > h2{
+    color: black;
+
+}
+.section-perfil > h3{
     text-align: center;
     color: rgb(190, 190, 190);
     margin: 10px auto;
 
+}
+
+.vista-productos{
+    width: 88%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 10px;
 }
 
 /* seccion editar perfil */
@@ -391,6 +438,11 @@ aside{
 }
 
 
+/* Estilos para add-comercio */
+
+.sectin-add-comercio{
+    color: white;
+}
 
 
 /* Adaptado a tablets */

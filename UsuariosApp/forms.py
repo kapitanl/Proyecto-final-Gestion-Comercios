@@ -1,5 +1,6 @@
 from django import forms
 from .models import ImgPerfil
+from GestionComerciosApp.models import PostDeComerciosForms, ProductosForms
 
 class ImgPerfilFormulario(forms.ModelForm):
 
@@ -8,3 +9,20 @@ class ImgPerfilFormulario(forms.ModelForm):
         fields = [
                 'img_perfil',
         ]
+
+
+class PostDeComerciosFormulario(forms.ModelForm):
+
+    class Meta:
+        model = PostDeComerciosForms
+        fields = [
+                'nombre_del_comercio', 'tipo_comercio', 'descripcion', 'img_comercio','localidad',
+        ]
+
+class ProductosFormulario(forms.ModelForm):
+
+        class Meta:
+                model = ProductosForms
+                fields = [
+                        'nombre_producto','precio_producto','img_producto'
+                ]

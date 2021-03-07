@@ -5,7 +5,8 @@ from django.contrib.auth import logout as to_logout
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth.forms import UserCreationForm
 from .models import ImgPerfil
-from .forms import ImgPerfilFormulario
+from .forms import ImgPerfilFormulario, PostDeComerciosFormulario, ProductosFormulario
+from GestionComerciosApp.models import PostDeComerciosForms, ProductosForms
 
 # Create your views here.
 
@@ -46,10 +47,16 @@ def logout(request):
 
 def perfil(request):
     if request.user.is_authenticated:
+        # imagen de perfil 
         img_perfil = ImgPerfil.objects.filter(usuario=request.user)
-        return render(request, 'perfil.html',{'img':img_perfil})
+        # enlita los comercios del usuario
+        com_list = PostDeComerciosForms.objects.filter(post_user=request.user)
+        # muestran los productos que se van agregando 
+        productos = ProductosForms.objects.all()
+        return render(request, 'perfil.html',{'img':img_perfil, 'comercios':com_list,'productos':productos})
     else:
         return redirect('login')
+
 
 def editar_perfil(request):
     if request.user.is_authenticated:
@@ -75,5 +82,67 @@ def editar_perfil(request):
                     return redirect('editar_perfil')
         img_perfil = ImgPerfil.objects.filter(usuario=request.user)    
         return render(request, 'editarPerfil.html',{'form':form,'img':img_perfil})
+    else:
+        return redirect('login')
+
+
+def add_comercio(request):
+    if request.user.is_authenticated:
+        # imagen de perfil 
+        img_perfil = ImgPerfil.objects.filter(usuario=request.user) 
+
+        # fomrulario para publicar
+        form = PostDeComerciosFormulario()
+        if request.method == 'POST':
+            form = PostDeComerciosFormulario(data=request.POST, files=request.FILES)
+            if form.is_valid():
+                usuario = form.save(commit=False)
+                usuario.post_user = request.user
+                usuario.save()
+                return redirect('perfil')
+        return render(request, 'add_comercio.html',{'img':img_perfil, 'form':form})
+    else:
+        return redirect('login')
+
+def editar_comercio(request, id):
+    if request.user.is_authenticated:
+        # imagen de perfil 
+        img_perfil = ImgPerfil.objects.filter(usuario=request.user)
+        
+        # obter el post para editarlo
+        get_post = PostDeComerciosForms.objects.get(id=id)
+        form = PostDeComerciosFormulario(instance=get_post)
+        if request.method == 'POST':
+            form = PostDeComerciosFormulario(data=request.POST, instance=get_post, files=request.FILES)
+            if form.is_valid():
+                usuario = form.save(commit=False)
+                usuario.post_user = request.user
+                usuario.save()
+                form = PostDeComerciosFormulario(instance=get_post)
+
+        return render(request, 'editar_comercio.html',{'img':img_perfil, 'form':form})
+    else:
+        return redirect('login')
+
+
+def eliminar_comercio(request, id):
+    comercio = PostDeComerciosForms.objects.get(id=id)
+    comercio.delete()
+    return redirect('perfil')
+
+def add_productos(request, id):
+    if request.user.is_authenticated:
+        # imagen de perfil 
+        img_perfil = ImgPerfil.objects.filter(usuario=request.user)
+        # formulario para agreagar productos 
+        form = ProductosFormulario()
+        if request.method == 'POST':
+            form = ProductosFormulario(data=request.POST, files=request.FILES)
+            if form.is_valid():
+                comercio = form.save(commit=False)
+                comercio.comercio_pertenece_id = id
+                comercio.save()
+                return redirect('perfil')
+        return render(request, 'add_productos.html',{'img':img_perfil, 'form':form})
     else:
         return redirect('login')
