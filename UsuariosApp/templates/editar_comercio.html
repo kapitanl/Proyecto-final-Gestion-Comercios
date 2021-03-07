@@ -8,8 +8,8 @@
 <section class="sectin-add-comercio">
     <form action="" method="POST"  enctype="multipart/form-data">
         {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit" >Publicar</button>
+        {{ form }}
+        <button type="submit" >Editar</button>
     </form>
 </section>
 

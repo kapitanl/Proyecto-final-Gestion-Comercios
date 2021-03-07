@@ -15,25 +15,26 @@
                     <a class="btn-editar" href="{% url 'editar_comercio' c.id %}">Editar</a>
                     <a class="btn-eliminar" href="#" onclick="confirmacionEliminacion({{c.id}})">Eliminar</a>
                 </div>
+               
             </div>
             <div class="vista-productos">
                 {% for p in productos %}
-                    {% for c in comercios %}
-                        {% if c.id == p.comercio_pertenece_id%}
+                   
+                        {% if c.id == p.comercio_pertenece_id %}
                             <div class="lista-productos">
                                 <img src="{{ p.img_producto.url }}" alt="">
                                 <h3>{{ p.nombre_producto }}</h3>
                                 <h2>${{ p.precio_producto }}</h2>
                             </div>
                             {% endif %}
-                    {% endfor %}
+            
                 {% endfor %}
             </div>
+            
         {% endfor %}
         
     {% else %}
         <h3>Aun No hay comercios </h3>
-        <a href="">Agregar comercio</a>
     {% endif %}
 
     

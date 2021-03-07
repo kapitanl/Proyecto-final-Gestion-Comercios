@@ -3,59 +3,21 @@
 {% load static %}
 
 {% block section %}
-<div class="contenedor">
     <section>
         <div class="categorias">
-                <h1>Comercios mas visitados</h1>
+                <h1>Comercios</h1>
                 <article>
                     {% for f in form %}
                     <div class="comercios">
-                        <a class="btn-favorito" href="#">Favorito</a>
                         <h2>{{ f.nombre_del_comercio }}</h2>
                         <img src="{{ f.img_comercio.url }}" alt="">
                         <p>{{ f.descripcion }}</p>
-                        <h3>Mejores precios en productos</h3>
-                        <div class="productos">
-                            <div><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5Aawqj3thLFjXdyQp2hd1pA4b3ZEkSJbZOg&usqp=CAU" alt="productos"></div>
-                            <div><img src="https://vivecompras.com/media/products/YOGURT_FAMILIAR.jpg" alt="productos"></div>
-                        </div>
                         <h3><a href="{% url 'seccionComercio' f.id %}">Saber mas...</a></h3>
                         <a class="btn-localidad" href="">{{ f.localidad }}</a>
                     </div>
                     {% endfor %} 
                 </article>
         </div>
-        <div class="categorias">
-            
-            <h1>Comercios con mejores precios</h1>
-            <article>
-                {% for f in form %}
-                    <div class="comercios">
-                        <a class="btn-favorito" href="#">Favorito</a>
-                        <h2>{{ f.nombre_del_comercio }}</h2>
-                        <img src="{{ f.img_comercio.url }}" alt="">
-                        <p>{{ f.descripcion }}</p>
-                        <h3>Mejores precios en productos</h3>
-                        <div class="productos">
-                            <div><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5Aawqj3thLFjXdyQp2hd1pA4b3ZEkSJbZOg&usqp=CAU" alt="productos"></div>
-                            <div><img src="https://vivecompras.com/media/products/YOGURT_FAMILIAR.jpg" alt="productos"></div>
-                        </div>
-                        <h3><a href="{% url 'seccionComercio' f.id %}">Saber mas...</a></h3>
-                        <a class="btn-localidad" href="">{{ f.localidad }}</a>
-                    </div>
-                    {% endfor %} 
-            </article>
-    </div>
     </section>
-    <aside>
-        <div class="barra-lateral">
-            <h2>Categorias</h2>
-            <ul>
-                <li><a href="">Comercios mas visitados</a></li>
-                <li><a href="">Comercios con mejores precios</a></li>
-            </ul>
-        </div>
-    </aside>
-</div>
     
 {% endblock %}

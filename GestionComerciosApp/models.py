@@ -9,7 +9,6 @@ class LocalidadesForms(models.Model):
         return self.localidad
 
 class ComercioForms(models.Model):
-    comercio_user = models.ForeignKey(User, on_delete=models.CASCADE)
     comercio = models.CharField(max_length=150)
 
     def __str__(self):

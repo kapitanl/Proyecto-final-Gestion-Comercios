@@ -12,21 +12,25 @@ from GestionComerciosApp.models import PostDeComerciosForms, ProductosForms
 
 
 def login(request):
-    form = AuthenticationForm()
-    if request.method == 'POST':
-        form = AuthenticationForm(data=request.POST)
-        if form.is_valid():
-            username = form.cleaned_data['username']
-            password = form.cleaned_data['password']
+    if request.user.is_authenticated:
+        return redirect("home")
+    else:
+        form = AuthenticationForm()
+        if request.method == 'POST':
+            form = AuthenticationForm(data=request.POST)
+            if form.is_valid():
+                username = form.cleaned_data['username']
+                password = form.cleaned_data['password']
 
-            user = authenticate(username=username, password=password)
-            
-            if user is not None:
-                to_login(request, user)
-                return redirect('/')
+                user = authenticate(username=username, password=password)
+                
+                if user is not None:
+                    to_login(request, user)
+                    return redirect('/')
 
 
-    return render(request, 'login.html', {'form': form})
+        return render(request, 'login.html', {'form': form})
+        
 
 def registro(request):
     form = UserCreationForm()
