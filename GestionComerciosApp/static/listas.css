@@ -56,3 +56,24 @@
 
 
 /* Mensaje de envío de correo también en info*/
+
+/* Adaptadap a mobil */
+
+@media screen and (max-width:450px){
+    
+    /* seccion localidades*/
+
+    .menu{
+        border-bottom: none;
+        list-style: none;
+        padding: 20px;
+        width: 90%;
+        list-style: none;
+        margin: auto;
+    
+    }
+    .info{
+        width: 90%;
+        margin: auto;
+    }
+}

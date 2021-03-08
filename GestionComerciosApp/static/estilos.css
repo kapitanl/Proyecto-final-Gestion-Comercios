@@ -667,7 +667,7 @@ article .por-comercio-comercios > p{
     }
     .articulo-productos{
         display: grid;
-        grid-template-columns: 1fr 1fr ;
+        grid-template-columns: 1fr ;
         gap: 10px;
     }
     .aside-comercios > .barra-lateral > ul{
@@ -727,4 +727,8 @@ article .por-comercio-comercios > p{
   
         width: 90%;
     }
+
+    
+
+
 }
