@@ -609,7 +609,7 @@ article .por-comercio-comercios > p{
 
 /* Adaptado a tablets */
 
-@media screen and (max-width: 1024px){
+@media screen and (max-width: 720px){
     article{
         grid-template-columns: 1fr 1fr;   
     }
@@ -656,6 +656,16 @@ article .por-comercio-comercios > p{
 
     .sectin-add-comercio > form{
         width: 70%;
+    }
+
+    /* seccion comercio */
+
+    .vista-productos{
+        width: 88%;
+        margin: auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
     }
 }
 
@@ -728,7 +738,29 @@ article .por-comercio-comercios > p{
         width: 90%;
     }
 
-    
+    /*  seccion mi comercio */
+    .list-comercios{
+        margin: 20px auto;
+        display: grid;
+        grid-template-columns: 40% 60%;
+        background: gray;
+        align-items: center;
+        width: 90%;
+        padding: 10px;
+    }
 
+    .vista-productos{
+        width: 88%;
+        margin: auto;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .botones-comercio{
+        display: grid;
+        grid-row: 1fr 1fr 1fr;
+        gap: 5px;
+    }
 
 }

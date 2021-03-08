@@ -3,7 +3,7 @@
     border-bottom: none;
     list-style: none;
     padding: 20px;
-    width: 900px;
+    width: 90%;
     list-style: none;
     margin: auto;
 
@@ -37,7 +37,8 @@
 }
 /*Contenido de info*/
 .info{
-    margin: 90px;
+    width: 90%;
+    margin: auto;
 }
 .info h1{
     color : rgb(196, 195, 195);
