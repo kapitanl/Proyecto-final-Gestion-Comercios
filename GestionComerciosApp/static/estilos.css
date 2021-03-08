@@ -469,6 +469,143 @@ footer h3{
     color: white;
 }
 
+/* seccion de por localidad */
+
+.por_localidad-categorias{
+    margin-bottom: 20px;
+}
+.por_localidad-categorias > h1{
+    text-align: center;
+    color: rgb(168, 168, 168);
+    background: rgb(0, 41, 41);
+    box-shadow: 0 0 15px black;
+    padding: 7px;
+    margin: 40px 0 15px;
+}
+
+
+article{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+    width: 95%;
+    margin: auto;
+    
+}
+.por_localidad-comercios{
+    position: relative;
+    text-align: center;
+    background: rgb(3, 46, 46);
+    box-shadow: 0 0 15px;
+    padding-bottom: 10px;
+}
+article .por_localidad-comercios > h2{
+    background: rgb(0, 54, 54);
+    color: rgb(194, 194, 194);
+    padding: 10px 0;
+    font-size: 30px;
+    box-shadow: 0 0 5px black;
+}
+
+.por_localidad-comercios h4{
+    padding: 5px 0;
+    color: gray 
+}
+
+article .por_localidad-comercios > p{
+    color: wheat;
+    padding: 10px;
+}
+
+.por_localidad-comercios > h3 > a{
+    text-decoration: none;
+    font-size: 23px;
+    color:rgb(177, 33, 33);
+}
+.por_localidad-comercios > a{
+    display: block;
+    color: grey;
+    padding: 10px 0;
+}
+
+.por_localidad-comercios > .btn-localidad{
+    text-decoration: none;
+    color: gray ;
+}
+.por_localidad-comercios > img{
+    width: 200px;
+    margin: 10px 0;
+}
+
+/* seccion de por comercio */
+
+.por-comercio-categorias{
+    margin-bottom: 20px;
+}
+.por-comercio-categorias > h1{
+    text-align: center;
+    color: rgb(168, 168, 168);
+    background: rgb(0, 41, 41);
+    box-shadow: 0 0 15px black;
+    padding: 7px;
+    margin: 40px 0 15px;
+}
+
+
+article{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+    width: 95%;
+    margin: auto;
+    
+}
+.por-comercio-comercios{
+    position: relative;
+    text-align: center;
+    background: rgb(3, 46, 46);
+    box-shadow: 0 0 15px;
+    padding-bottom: 10px;
+}
+article .por-comercio-comercios > h2{
+    background: rgb(0, 54, 54);
+    color: rgb(194, 194, 194);
+    padding: 10px 0;
+    font-size: 30px;
+    box-shadow: 0 0 5px black;
+}
+
+.por-comercio-comercios h4{
+    padding: 5px 0;
+    color: gray 
+}
+
+article .por-comercio-comercios > p{
+    color: wheat;
+    padding: 10px;
+}
+
+.por-comercio-comercios > h3 > a{
+    text-decoration: none;
+    font-size: 23px;
+    color:rgb(177, 33, 33);
+}
+.por-comercio-comercios > a{
+    display: block;
+    color: grey;
+    padding: 10px 0;
+}
+
+.por-comercio-comercios > .btn-localidad{
+    text-decoration: none;
+    color: gray ;
+}
+.por-comercio-comercios > img{
+    width: 200px;
+    margin: 10px 0;
+}
+
+
 
 /* Adaptado a tablets */
 

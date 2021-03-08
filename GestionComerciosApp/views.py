@@ -4,6 +4,7 @@ from UsuariosApp.models import ImgPerfil
 from django.conf import settings
 from django.core.mail import send_mail
 from django.template.loader import get_template
+from django.db.models import Count
 # Create your views here.
 
 
@@ -17,8 +18,20 @@ def home(request):
         return render(request, 'home.html',{'form':form})
 
 def localidades(request):
-    form = LocalidadesForms.objects.all()
-    return render(request, 'localidades.html',{'formulario':form})
+    if request.user.is_authenticated:
+        img_perfil = ImgPerfil.objects.filter(usuario=request.user)
+        # obtiene todas las localidades
+        all_localidades = LocalidadesForms.objects.all()
+        # obtiene todas los post para comparar la localidad
+        all_post= PostDeComerciosForms.objects.values("localidad_id").distinct()
+
+        return render(request, 'localidades.html',{'localidades':all_localidades,'post':all_post,'img':img_perfil})
+    else:
+        # obtiene todas las localidades
+        all_localidades = LocalidadesForms.objects.all()
+        # obtiene todas los post para comparar la localidad
+        all_post= PostDeComerciosForms.objects.values("localidad_id").distinct()
+        return render(request, 'localidades.html',{'localidades':all_localidades,'post':all_post})
 
 def seccionComercio(request, id):
     if request.user.is_authenticated:
@@ -39,24 +52,54 @@ def seccionComercio(request, id):
         return render(request, 'seccion_comercios.html',{'form':form, 'comer':comercio})
 
 def comercios(request):
-    form = ComercioForms.objects.all()
-    return render(request, 'comercios.html',{'form':form})
+    if request.user.is_authenticated:
+        img_perfil = ImgPerfil.objects.filter(usuario=request.user)
+        # obtiene  los distintos comercios que hay
+        all_comercio = ComercioForms.objects.all()
+        # obtiene todas los post para comparar con comercios 
+        all_post= PostDeComerciosForms.objects.values("tipo_comercio_id").distinct()
+        return render(request, 'comercios.html',{'comercio':all_comercio,'post':all_post,'img':img_perfil})
+    else:
+        all_comercio = ComercioForms.objects.all()
+        # obtiene todas los post para comparar con comercios 
+        all_post= PostDeComerciosForms.objects.values("tipo_comercio_id").distinct()
+        return render(request, 'comercios.html',{'comercio':all_comercio,'post':all_post})
 
 def info(request):
-    return render(request, 'info.html') 
+    if request.user.is_authenticated:
+        img_perfil = ImgPerfil.objects.filter(usuario=request.user)
+        return render(request, 'info.html',{'img':img_perfil})
+
+    else:
+        return render(request, 'info.html')
 
 def contactanos(request):
-    if request.method == 'POST':
+    if request.user.is_authenticated:
+        img_perfil = ImgPerfil.objects.filter(usuario=request.user)
+        if request.method == 'POST':
 
-        Subject = request.POST["Asunto"]
-        message = request.POST["Mensaje"] + " " + request.POST["Email"]
-        email_from = settings.EMAIL_HOST_USER
-        recipient_list = ["pruebaproyectof4@gmail.com"]
-        send_mail (Subject, message, email_from, recipient_list)
+            Subject = request.POST["Asunto"]
+            message = request.POST["Mensaje"] + " " + request.POST["Email"]
+            email_from = settings.EMAIL_HOST_USER
+            recipient_list = ["pruebaproyectof4@gmail.com"]
+            send_mail (Subject, message, email_from, recipient_list)
 
-        return render(request, 'mensaje.html')
+            return render(request, 'mensaje.html',{'img':img_perfil})
 
-    return render(request, 'contactanos.html')
+        return render(request, 'contactanos.html',{'img':img_perfil})
+    else:
+        if request.method == 'POST':
+
+            Subject = request.POST["Asunto"]
+            message = request.POST["Mensaje"] + " " + request.POST["Email"]
+            email_from = settings.EMAIL_HOST_USER
+            recipient_list = ["pruebaproyectof4@gmail.com"]
+            send_mail (Subject, message, email_from, recipient_list)
+
+            return render(request, 'mensaje.html')
+
+        return render(request, 'contactanos.html')
+
 
 def categoriaDeProductos(request, id):
     if request.user.is_authenticated:
@@ -68,3 +111,27 @@ def categoriaDeProductos(request, id):
         return render(request, 'categorias.html',{'img':img_perfil, 'lista':lista})
     else:
         return render(request, 'categorias.html',)
+
+
+def por_localidad(request, id):
+    if request.user.is_authenticated:
+        img_perfil = ImgPerfil.objects.filter(usuario=request.user)
+        # lista los comercio que hay en esa localidad
+        comercio = PostDeComerciosForms.objects.filter(localidad_id=id)
+        return render(request, 'por_localidad.html',{'comercios':comercio,'img':img_perfil})
+    else:
+        # lista los comercio que hay en esa localidad
+        comercio = PostDeComerciosForms.objects.filter(localidad_id=id)
+        return render(request, 'por_localidad.html',{'comercios':comercio})
+
+
+def por_comercio(request, id):
+    if request.user.is_authenticated:
+        img_perfil = ImgPerfil.objects.filter(usuario=request.user)
+        # lista los comercio que hay en esa localidad
+        comercio = PostDeComerciosForms.objects.filter(tipo_comercio_id=id)
+        return render(request, 'por_comercio.html',{'comercios':comercio,'img':img_perfil})
+    else:
+        # lista los comercio que hay en esa localidad
+        comercio = PostDeComerciosForms.objects.filter(tipo_comercio_id=id)
+        return render(request, 'por_comercio.html',{'comercios':comercio})
