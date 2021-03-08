@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block section %}
+
+        <section>
+            <div class="por_localidad-categorias">
+                    <h1>Comercios</h1>
+                    <article>
+                        {% for c in comercios %}
+                        <div class="por_localidad-comercios">
+                            <h2>{{ c.nombre_del_comercio }}</h2>
+                            <h4>{{ c.tipo_comercio }}</h4>
+                            <img src="{{ c.img_comercio.url }}" alt="">
+                            <p>{{ c.descripcion }}</p>
+                            <h3><a href="{% url 'seccionComercio' c.id %}">Saber mas...</a></h3>
+                            <a class="btn-localidad" href="">{{ c.localidad }}</a>
+                        </div>
+                        {% endfor %} 
+                    </article>
+            </div>
+        </section>
+
+{% endblock  %}

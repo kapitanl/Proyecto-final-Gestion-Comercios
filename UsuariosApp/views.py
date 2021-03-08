@@ -5,7 +5,7 @@ from django.contrib.auth import logout as to_logout
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth.forms import UserCreationForm
 from .models import ImgPerfil
-from .forms import ImgPerfilFormulario, PostDeComerciosFormulario, ProductosFormulario
+from .forms import ImgPerfilFormulario, PostDeComerciosFormulario, ProductosFormulario, CategoriaProductosFormulario
 from GestionComerciosApp.models import PostDeComerciosForms, ProductosForms
 
 # Create your views here.
@@ -150,3 +150,15 @@ def add_productos(request, id):
         return render(request, 'add_productos.html',{'img':img_perfil, 'form':form})
     else:
         return redirect('login')
+
+def add_categoria(request):
+    form = CategoriaProductosFormulario()
+    if request.method == 'POST':
+        form = CategoriaProductosFormulario(data=request.POST)
+        if form.is_valid():
+            usuario = form.save(commit=False)
+            usuario.usuario = request.user
+            usuario.save()
+            form = CategoriaProductosFormulario()
+
+    return render(request, 'add_categoria.html', {'form':form})

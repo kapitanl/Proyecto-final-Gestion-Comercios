@@ -3,11 +3,14 @@
 
 {% block section %}
 
-<ul class="menu">
-    {% for f in form %}
-    <li><a href="">{{ f.comercio }}</a></li>
+<ul class = "menu">
+    {% for c in comercio %}
+        {% for p in post %}
+                    {% if c.id == p.tipo_comercio_id %}
+                            <li><a href="{% url 'por_comercio' c.id %}">{{ c.comercio }}</a></li>
+                    {% endif %}
+        {% endfor %}
     {% endfor %}
 </ul>
-
 {% endblock %}
 

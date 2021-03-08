@@ -10,6 +10,7 @@
                     {% for f in form %}
                     <div class="comercios">
                         <h2>{{ f.nombre_del_comercio }}</h2>
+                        <h4>{{ f.tipo_comercio }}</h4>
                         <img src="{{ f.img_comercio.url }}" alt="">
                         <p>{{ f.descripcion }}</p>
                         <h3><a href="{% url 'seccionComercio' f.id %}">Saber mas...</a></h3>

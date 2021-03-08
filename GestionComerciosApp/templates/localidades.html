@@ -4,8 +4,12 @@
 {% block section %}
 
 <ul class = "menu">
-    {% for f in formulario %}
-    <li><a href="">{{ f.localidad }}</a></li>
+    {% for l in localidades %}
+        {% for p in post %}
+                    {% if l.id == p.localidad_id %}
+                            <li><a href="{% url 'por_localidad' l.id %}">{{ l.localidad }}</a></li>
+                    {% endif %}
+        {% endfor %}
     {% endfor %}
 </ul>
 
