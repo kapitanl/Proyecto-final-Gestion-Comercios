@@ -661,7 +661,7 @@ article .por-comercio-comercios > p{
 
 /* Adaptadap a mobil */
 
-@media screen and (max-width:720px){
+@media screen and (max-width:500px){
     article{
         grid-template-columns: 1fr;   
     }
@@ -678,6 +678,44 @@ article .por-comercio-comercios > p{
     }
     .aside-comercios > .barra-lateral > ul > li > a{
         padding: 0 10px;
+    }
+    /* seccion header login registro*/
+    header{
+        height: 50px;
+    }
+    header h1{
+        color: rgb(219, 219, 219);
+        padding: 0;
+        font-size: 20px;
+        padding: 10px 5px;
+    }
+
+    .btn-login{
+        background: rgb(0, 167, 0);
+        padding: 5px;
+        transition: background 0.6s;
+    }
+   
+    
+    
+    .btn-register{
+        background: grey;
+        padding: 5px ;
+        transition: background 0.6s;
+    }
+
+    /* nav */
+    nav{
+        width: 100%;
+    }
+    nav > ul > li > a{
+        text-decoration: none;
+        display: block;
+        padding: 10px 10px;
+        background: green;
+        color: white;
+        border-right: 1px solid white;
+        transition: background 0.6s;
     }
 
     /* sectin-add-comercio */
