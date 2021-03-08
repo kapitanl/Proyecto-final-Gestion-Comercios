@@ -297,17 +297,21 @@ article .comercios p{
 }
 
 /*  footer */
+footer{
+    clear: both;
+}
 
 footer h3{
     text-align: center;
     color: white;
     padding: 10px 0;
+
 }
 
 
 /* section perfil */
 .section-perfil{
-    height: 100vh;
+    
 }
 .section-perfil > h1{
     color: rgb(190, 190, 190);
@@ -667,6 +671,9 @@ article .por-comercio-comercios > p{
         grid-template-columns: 1fr 1fr;
         gap: 10px;
     }
+    footer{
+        clear: both;
+    }
 }
 
 /* Adaptadap a mobil */
@@ -761,6 +768,9 @@ article .por-comercio-comercios > p{
         display: grid;
         grid-row: 1fr 1fr 1fr;
         gap: 5px;
+    }
+    footer{
+        clear: both;
     }
 
 }
