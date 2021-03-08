@@ -1,6 +1,9 @@
 from django.shortcuts import render, redirect
 from .models import PostDeComerciosForms, ProductosForms,ComercioForms,LocalidadesForms, CategoriaProductos
 from UsuariosApp.models import ImgPerfil
+from django.conf import settings
+from django.core.mail import send_mail
+from django.template.loader import get_template
 # Create your views here.
 
 
@@ -43,6 +46,16 @@ def info(request):
     return render(request, 'info.html') 
 
 def contactanos(request):
+    if request.method == 'POST':
+
+        Subject = request.POST["Asunto"]
+        message = request.POST["Mensaje"] + " " + request.POST["Email"]
+        email_from = settings.EMAIL_HOST_USER
+        recipient_list = ["pruebaproyectof4@gmail.com"]
+        send_mail (Subject, message, email_from, recipient_list)
+
+        return render(request, 'mensaje.html')
+
     return render(request, 'contactanos.html')
 
 def categoriaDeProductos(request, id):
