@@ -35,4 +35,24 @@
     background: rgb(3, 15, 15) 
 
 }
+/*Contenido de info*/
+.info{
+    margin: 90px;
+}
+.info h1{
+    color : rgb(196, 195, 195);
+}
+.info p{
+    color: rgb(196, 195, 195);
+}
+.info h2{
+    color: rgb(196, 195, 195);
+}
+.info h3{
+    color: rgb(196, 195, 195);
+}
 
+/*contenido de contáctanos también en info*/
+
+
+/* Mensaje de envío de correo también en info*/
