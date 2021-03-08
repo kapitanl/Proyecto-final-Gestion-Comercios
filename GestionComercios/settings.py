@@ -51,6 +51,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'GestionComercios.urls'
@@ -134,6 +135,4 @@ EMAIL_PORT = 587
 EMAIL_HOST_USER = "pruebaproyecto367@gmail.com"
 EMAIL_HOST_PASSWORD ="Cristian123"
 
-
-
-
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
