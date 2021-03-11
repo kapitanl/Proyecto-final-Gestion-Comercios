@@ -7,29 +7,33 @@
 <section class="section-editarPerfil" >
         <form action=""  method="POST" enctype="multipart/form-data">
             {% csrf_token %}
+            
             <h2>Editar Imagen de perfil</h2>
+
             <div class="cont-img">
                 {% if img %}
-                {% for i in img %}
-                    <img  class="perfiladit-img" src="{{ i.img_perfil.url }}" alt="" >
-                {% endfor %}
-            {% else %}
-                <img  class="perfiladit-img" src="{% static 'img/user/default-user-img.jpg' %}" alt="">
-            {% endif %}
-            <br>
-            <div class="btn-edit-img"><p>Editar Imagen</p><input  type="file" name="img_perfil" ></div>
-            
-            <br>
-
-            <button type="submit" >Cambiar</button>
+                    {% for i in img %}
+                        <img  class="perfiladit-img" src="{{ i.img_perfil.url }}" alt="" >
+                        <div id="img-previw"></div>
+                    {% endfor %}
+                {% else %}
+                        <img  class="perfiladit-img" src="{% static 'img/user/default-user-img.jpg' %}" alt="">
+                        <div id="img-previw"></div>
+                {% endif %}
+                <br>
+                <div class="btn-edit-img"><p>Editar Imagen</p><input  type="file" name="img_perfil" id='imagen'></div>    
+                <br>
+                <input type="submit" value="Subir">
             </div>
-            
-
-            
 
         </form>
 </section>
 
 
 
+{% endblock %}
+
+{% block script %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="{% static 'js/upload-img.js' %}"></script>
 {% endblock %}
