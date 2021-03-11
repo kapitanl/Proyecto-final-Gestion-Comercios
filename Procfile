@@ -1,1 +1,1 @@
-web: gunicorn GestionComercios.wsgi --log-file -
+web: gunicorn GestionComercios.wsgi 

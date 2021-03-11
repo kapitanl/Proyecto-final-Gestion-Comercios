@@ -1,0 +1,80 @@
+/* Menu de localidades y comercios*/
+.menu{
+    border-bottom: none;
+    list-style: none;
+    padding: 20px;
+    width: 90%;
+    list-style: none;
+    margin: auto;
+
+}
+
+.menu li{
+    text-align: center;
+    margin: 10px;
+
+}
+
+
+.menu li a{
+    background: rgb(3, 15, 15); 
+    transition: background 0.3s;
+
+    display: block;
+    background-color: rgba(1, 53, 53);
+    color: rgb(196, 195, 195);
+    padding: 20px;
+    width: 90%;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(196, 195, 195);
+    border-top: 1px solid rgb(196, 195, 195);
+    border-right: 1px solid rgba(196, 195, 195);
+    border-left: 1px solid rgba(196, 195, 195);
+}
+.menu li a:hover{
+    background: rgb(3, 15, 15) 
+
+}
+/*Contenido de info*/
+.info{
+    width: 90%;
+    margin: auto;
+}
+.info h1{
+    color : rgb(196, 195, 195);
+}
+.info p{
+    color: rgb(196, 195, 195);
+}
+.info h2{
+    color: rgb(196, 195, 195);
+}
+.info h3{
+    color: rgb(196, 195, 195);
+}
+
+/*contenido de contáctanos también en info*/
+
+
+/* Mensaje de envío de correo también en info*/
+
+/* Adaptadap a mobil */
+
+@media screen and (max-width:450px){
+    
+    /* seccion localidades*/
+
+    .menu{
+        border-bottom: none;
+        list-style: none;
+        padding: 20px;
+        width: 90%;
+        list-style: none;
+        margin: auto;
+    
+    }
+    .info{
+        width: 90%;
+        margin: auto;
+    }
+}
