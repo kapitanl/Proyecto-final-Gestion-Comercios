@@ -21,10 +21,11 @@
                 {% for p in productos %}
                    
                         {% if c.id == p.comercio_pertenece_id %}
-                            <div class="lista-productos">
+                            <div class="lista-productos-perfil">
                                 <img src="{{ p.img_producto.url }}" alt="">
                                 <h3>{{ p.nombre_producto }}</h3>
                                 <h2>${{ p.precio_producto }}</h2>
+                                <a class="btn-eliminar" href="#" onclick="confirmacionEliminacion({{p.id}})">Eliminar</a>
                             </div>
                             {% endif %}
             
@@ -45,4 +46,5 @@
     {% block script %}
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <script src="{% static 'js/confirmacion.js' %}"></script>
+    <script src="{% static 'js/confirmacion-eliminar-producto.js' %}"></script>
     {% endblock %}

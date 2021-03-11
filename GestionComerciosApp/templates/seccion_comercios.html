@@ -12,10 +12,9 @@
                 {% endfor %}
                 <article class="articulo-productos">
                     {% for f in form %}
-                    <div class="lista-productos"> 
-                        <h3>{{ f.nombre_producto }}</h3>
+                    <div class="lista-productos">        
                         <img src="{{ f.img_producto.url }}" alt="">
-                        
+                        <h3>{{ f.nombre_producto }}</h3>
                         <h2>${{ f.precio_producto }}</h2>
                     </div>
                     {% endfor %} 

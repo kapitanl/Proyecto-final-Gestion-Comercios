@@ -225,7 +225,7 @@ article .comercios p{
     color: gray ;
 }
 .comercios > img{
-    width: 200px;
+    width: 100%;
     margin: 10px 0;
 }
 
@@ -249,32 +249,40 @@ article .comercios p{
 
 .articulo-productos{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    gap: 10px;
+    grid-template-columns: repeat(5,1fr) ;
+    gap: 20px;
 }
 
 .lista-productos{
-    background: rgb(1, 61, 61);
+    background: rgb(4, 36, 36);
     box-shadow: 0 0 15px black;
-    padding: 10px;
+    padding: 5px;
     text-align: center;
     color: rgb(173, 173, 173);
+    padding-bottom: 10px;
+    cursor: pointer;
     
 }
 
 .lista-productos > img{
-    width: 150px;
+    width: 100%;
+    object-fit: cover;
     box-shadow: 0 0 15px black;
 }
 
 .lista-productos >h3{
-    padding-bottom: 10px;
+    font-size: 20px;
+    padding: 10px 0;
 }
 
 .lista-productos > h2{
+    display: block;
     color: green;
-    text-shadow: 0 0 5px black;
-    padding-top: 10px;
+    background: wheat;
+    border-radius: 20px;
+    width: 55%;
+    padding: 5px 0;
+    margin: auto;
 }
 
 
@@ -324,9 +332,7 @@ footer h3{
 
 
 /* section perfil */
-.section-perfil{
-    
-}
+
 .section-perfil > h1{
     color: rgb(190, 190, 190);
     background: rgb(3, 59, 59);
@@ -388,6 +394,51 @@ footer h3{
     grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 10px;
 }
+
+.lista-productos-perfil{
+    position: relative;
+    background: rgb(4, 36, 36);
+    box-shadow: 0 0 15px black;
+    padding: 5px;
+    text-align: center;
+    color: rgb(173, 173, 173);
+    padding-bottom: 10px;
+    cursor: pointer;
+    
+}
+
+.lista-productos-perfil > img{
+    width: 100%;
+    object-fit: cover;
+    box-shadow: 0 0 15px black;
+}
+
+.lista-productos-perfil >h3{
+    font-size: 20px;
+    padding: 10px 0;
+}
+
+.lista-productos-perfil > h2{
+    display: block;
+    color: green;
+    background: wheat;
+    border-radius: 20px;
+    width: 55%;
+    padding: 5px 0;
+    margin: auto;
+}
+
+.lista-productos-perfil > a{
+    position: absolute;
+    background:rgb(112, 9, 9) ;
+    padding: 5px;
+    text-decoration: none;
+    color: white;
+    top: 0;
+    right: 0;
+}
+
+
 
 /* seccion editar perfil */
 .section-editarPerfil{
