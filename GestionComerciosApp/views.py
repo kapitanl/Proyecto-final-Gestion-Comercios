@@ -5,6 +5,7 @@ from django.conf import settings
 from django.core.mail import send_mail
 from django.template.loader import get_template
 from django.db.models import Count
+from .forms import FormulariosDeContactos
 # Create your views here.
 
 
@@ -76,29 +77,16 @@ def info(request):
 def contactanos(request):
     if request.user.is_authenticated:
         img_perfil = ImgPerfil.objects.filter(usuario=request.user)
-        if request.method == 'POST':
-
-            Subject = request.POST["Asunto"]
-            message = request.POST["Mensaje"] + " " + request.POST["Email"]
-            email_from = settings.EMAIL_HOST_USER
-            recipient_list = ["pruebaproyectof4@gmail.com"]
-            send_mail (Subject, message, email_from, recipient_list)
-
-            return render(request, 'mensaje.html',{'img':img_perfil})
-
-        return render(request, 'contactanos.html',{'img':img_perfil})
-    else:
-        if request.method == 'POST':
-
-            Subject = request.POST["Asunto"]
-            message = request.POST["Mensaje"] + " " + request.POST["Email"]
-            email_from = settings.EMAIL_HOST_USER
-            recipient_list = ["pruebaproyectof4@gmail.com"]
-            send_mail (Subject, message, email_from, recipient_list)
-
-            return render(request, 'mensaje.html')
-
-        return render(request, 'contactanos.html')
+        if request.method=="POST":
+            miFormulario = FormulariosDeContactos(request.POST)
+            if miFormulario.is_valid():
+                inf_formulario= miFormulario.cleaned_data
+                send_mail(inf_formulario["asunto"], inf_formulario["mensaje"], inf_formulario.get("email"," "),["gestioncomercioprueba@gmail.com"],)
+                return render(request, "mensaje.html")
+        else:
+            miFormulario= FormulariosDeContactos()
+          
+        return render(request, "contactanos.html", {"miformulario":miFormulario,})
 
 
 def categoriaDeProductos(request, id):

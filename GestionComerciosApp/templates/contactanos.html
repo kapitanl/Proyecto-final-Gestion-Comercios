@@ -5,14 +5,15 @@
 
 <div class="contactanos">
     <h1>Contactanos</h1>
-   <form action="contactanos" method="POST"> {% csrf_token %}
+   <form action="contactanos" method="POST"> 
+       {% csrf_token %}
 
-       <p>Asunto:<input type="text" name="Asunto"></p>
+       <p>Asunto:<input type="text" name="asunto"></p>
 
-       <p>Email:<input type="text" name="Email"></p>
+       <p>Email:<input type="email" name="email"></p>
 
        <div>
-           <p>Mensaje:<textarea name="Mensaje" rows="15" cols="45"></textarea></p>
+           <p>Mensaje:<textarea name="mensaje" rows="15" cols="45"></textarea></p>
        </div>
 
        <input type="submit" name="Enviar">
