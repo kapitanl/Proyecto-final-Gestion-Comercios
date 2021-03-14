@@ -17,6 +17,7 @@ header{
     align-items: center;
     background: rgb(3, 46, 46);
     box-shadow: 0 0 20px;
+    padding: 0 5px;
 }
 
 header h1{
@@ -35,7 +36,6 @@ header h1{
 
 .usuarios > a{
     text-decoration: none; 
-    margin: 0 10px;
     color: white;
 }
 .perfil-img{
@@ -97,19 +97,33 @@ header h1{
 }
 
 /* nav */
+
+#menu{
+    display: none;
+}
+
+.linea{
+    display: none;
+}
+
 nav > ul{
     list-style: none;
     display: flex;
+    text-align: center;
+    align-items: center;
+    
+    
 }
+
 
 nav > ul > li > a{
     text-decoration: none;
-    display: block;
-    padding: 10px 20px;
+    display: inline-block;
     background: green;
     color: white;
-    border-right: 1px solid white;
     transition: background 0.6s;
+    border-right: 2px solid white;
+    padding: 10px 20px;
 }
 
 nav > ul > li > a:hover{
@@ -211,7 +225,7 @@ article .comercios p{
     color: gray ;
 }
 .comercios > img{
-    width: 200px;
+    width: 100%;
     margin: 10px 0;
 }
 
@@ -235,32 +249,40 @@ article .comercios p{
 
 .articulo-productos{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    gap: 10px;
+    grid-template-columns: repeat(5,1fr) ;
+    gap: 20px;
 }
 
 .lista-productos{
-    background: rgb(1, 61, 61);
+    background: rgb(4, 36, 36);
     box-shadow: 0 0 15px black;
-    padding: 10px;
+    padding: 5px;
     text-align: center;
     color: rgb(173, 173, 173);
+    padding-bottom: 10px;
+    cursor: pointer;
     
 }
 
 .lista-productos > img{
-    width: 150px;
+    width: 100%;
+    object-fit: cover;
     box-shadow: 0 0 15px black;
 }
 
 .lista-productos >h3{
-    padding-bottom: 10px;
+    font-size: 20px;
+    padding: 10px 0;
 }
 
 .lista-productos > h2{
+    display: block;
     color: green;
-    text-shadow: 0 0 5px black;
-    padding-top: 10px;
+    background: wheat;
+    border-radius: 20px;
+    width: 55%;
+    padding: 5px 0;
+    margin: auto;
 }
 
 
@@ -310,9 +332,7 @@ footer h3{
 
 
 /* section perfil */
-.section-perfil{
-    
-}
+
 .section-perfil > h1{
     color: rgb(190, 190, 190);
     background: rgb(3, 59, 59);
@@ -375,6 +395,51 @@ footer h3{
     gap: 10px;
 }
 
+.lista-productos-perfil{
+    position: relative;
+    background: rgb(4, 36, 36);
+    box-shadow: 0 0 15px black;
+    padding: 5px;
+    text-align: center;
+    color: rgb(173, 173, 173);
+    padding-bottom: 10px;
+    cursor: pointer;
+    
+}
+
+.lista-productos-perfil > img{
+    width: 100%;
+    object-fit: cover;
+    box-shadow: 0 0 15px black;
+}
+
+.lista-productos-perfil >h3{
+    font-size: 20px;
+    padding: 10px 0;
+}
+
+.lista-productos-perfil > h2{
+    display: block;
+    color: green;
+    background: wheat;
+    border-radius: 20px;
+    width: 55%;
+    padding: 5px 0;
+    margin: auto;
+}
+
+.lista-productos-perfil > a{
+    position: absolute;
+    background:rgb(112, 9, 9) ;
+    padding: 5px;
+    text-decoration: none;
+    color: white;
+    top: 0;
+    right: 0;
+}
+
+
+
 /* seccion editar perfil */
 .section-editarPerfil{
     height: 100vh;
@@ -395,13 +460,15 @@ footer h3{
     padding: 10px;
 }
 
-.section-editarPerfil form input{
-    display: inline-block;
-    padding: 10px 0;
-    width: 100% ;
-    height: 20px;
-    border-style: none;
-    opacity: 0;
+.section-editarPerfil > form input{
+    text-decoration: none;
+    border: none;
+    padding: 10px;
+    background: green;
+}
+
+.cont-img{
+    position: relative;
 }
 
 .perfiladit-img{
@@ -410,6 +477,17 @@ footer h3{
     height: 250px;
     box-shadow: 0 0 15px;
     
+}
+
+#img-previw > img{
+    display: inline-block;
+    width: 250px;
+    height: 250px;
+    box-shadow: 0 0 15px;
+}
+#img-previw{
+    position: absolute;
+    top: 0%;
 }
 
 .cont-img{
@@ -429,6 +507,16 @@ footer h3{
 .btn-edit-img:hover{
     background: rgba(3, 24, 24, 0.973);
 }
+
+.btn-edit-img > input{
+    display: inline-block;
+    padding: 10px 0;
+    width: 100% ;
+    height: 20px;
+    border-style: none;
+    opacity: 0;
+}
+
 .btn-edit-img p{
     color: white ;
     position: absolute;
@@ -610,6 +698,28 @@ article .por-comercio-comercios > p{
 }
 
 
+/* url nav avtiva */
+
+.home-avtiva{
+    background-color: rgb(9, 59, 9);
+}
+
+.localidad-avtiva{
+    background-color: rgb(9, 59, 9);
+}
+
+.comercios-avtiva{
+    background-color: rgb(9, 59, 9);
+}
+
+.contactanos-avtiva{
+    background-color: rgb(9, 59, 9);
+}
+
+.info-avtiva{
+    background-color: rgb(9, 59, 9);
+}
+
 
 /* Adaptado a tablets */
 
@@ -678,7 +788,7 @@ article .por-comercio-comercios > p{
 
 /* Adaptadap a mobil */
 
-@media screen and (max-width:450px){
+@media screen and (max-width:520px){
     article{
         grid-template-columns: 1fr;   
     }
@@ -698,44 +808,129 @@ article .por-comercio-comercios > p{
     }
     /* seccion header login registro*/
     header{
-        height: 50px;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background: rgb(3, 46, 46);
+        box-shadow: 0 0 20px;
     }
     header h1{
         color: rgb(219, 219, 219);
         padding: 0;
-        font-size: 15px;
+        font-size: 23px;
         padding: 10px 5px;
     }
 
+    .usuarios{
+        padding: 3px;
+    }
+
+    .perfil-img{
+        width: 40px;
+        height: 40px;
+        border-radius: 20px;
+        margin: 0 10px;
+    }
+
+    .menu-perfil{
+        position: absolute;
+        background: rgb(0, 59, 59);
+        list-style: none;
+        width: 150%;
+        padding: 5% 10% 5%  ;
+        top: 45px;
+        left: -60px;
+        box-shadow: 0 0 15px;
+        z-index: 1;
+        display: none;
+    }
+
     .btn-login{
+        display: inline-block;
         background: rgb(0, 167, 0);
         padding: 5px;
-        font-size: 10px;
+        font-size: 15px;
         transition: background 0.6s;
+        margin-bottom: 5px;
         
     }
    
     
     
     .btn-register{
+        display: inline-block;
         background: grey;
         padding: 5px ;
-        font-size: 10px;
+        font-size: 15px;
+        margin-bottom: 5px;
         transition: background 0.6s;
     }
 
     /* nav */
-    nav{
-      width: 0%;
+    
+    .linea{
+        display: block;
+        background: rgb(11, 46, 46);
+        width: 100%;
+        height: 8px;
+        border: 1px solid gray;
     }
+
+
+    #menu{
+        display: block;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+    }
+
+    nav > ul{
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+        
+    }
+    nav{
+        position: relative;
+        background: rgb(13, 58, 58);
+        height: 30px;
+        width: 30px;
+        border: 2px solid rgb(0, 0, 0);
+        top: -40px;
+        left: 3px;
+    }
+    nav > ul{
+        position: absolute;
+        width: 400%;
+        left: 32px;
+        top: 40px;
+        left: -200px;
+        z-index: 1;
+        transition: left 0.6s;
+    }
+    nav > ul > li{
+        width: 100%;
+        border-left: 0;
+        border-bottom: 1px solid white;
+    }
+
     nav > ul > li > a{
         text-decoration: none;
         display: block;
-        padding: 10px 5px;
         background: green;
         color: white;
-        border-right: 1px solid white;
+        border: 0;
+        padding: 10px 0;
         transition: background 0.6s;
+    }
+
+    #menu:checked ~ ul{
+        left: 0;
     }
 
     /* sectin-add-comercio */

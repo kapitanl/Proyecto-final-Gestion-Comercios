@@ -15,7 +15,7 @@ import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
 # Quick-start development settings - unsuitable for production
@@ -29,6 +29,7 @@ DEBUG = True
 
 
 ALLOWED_HOSTS = ["gestioncomercio.herokuapp.com", "127.0.0.1"]
+
 
 
 # Application definition
@@ -82,7 +83,7 @@ WSGI_APPLICATION = 'GestionComercios.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
 
@@ -137,3 +138,5 @@ EMAIL_USE_TLS = True
 EMAIL_PORT = 587
 EMAIL_HOST_USER = "pruebaproyecto367@gmail.com"
 EMAIL_HOST_PASSWORD ="Cristian123"
+
+STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'

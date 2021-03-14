@@ -1,0 +1,949 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+body{
+    background:rgb(4, 29, 29);
+    width: 95%;
+    margin: auto;
+}
+
+/* header */
+
+header{
+    display: flex;
+    align-items: center;
+    background: rgb(3, 46, 46);
+    box-shadow: 0 0 20px;
+    padding: 0 5px;
+}
+
+header h1{
+    color: rgb(219, 219, 219);
+    padding: 1%;
+}
+
+
+
+/* Area usuario del header */
+
+.usuarios{
+    position: relative;
+    margin-left: auto;
+}
+
+.usuarios > a{
+    text-decoration: none; 
+    color: white;
+}
+.perfil-img{
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    margin: 0 20px;
+}
+
+.menu-perfil{
+    position: absolute;
+    background: rgb(0, 59, 59);
+    list-style: none;
+    width: 120%;
+    padding: 5% 10% 5%  ;
+    top: 40px;
+    left: -60px;
+    box-shadow: 0 0 15px;
+    z-index: 1;
+    display: none;
+}
+.menu-perfil h2{
+    text-align: center;
+    color: rgb(212, 212, 212);
+}
+.usuarios:hover .menu-perfil{
+    display: block;
+}
+.menu-perfil > li > a{
+    display: block;
+    text-decoration: none;
+    color: gray;
+    margin: 10px 0;
+    padding-left: 0px;
+    transition: padding 0.3s;
+
+}
+.menu-perfil > li > a:hover{
+    padding-left: 5px;
+}
+.btn-login{
+    background: rgb(0, 167, 0);
+    padding: 10px;
+    transition: background 0.6s;
+}
+.btn-login:hover{
+    background: rgb(0, 73, 0) ;
+}
+
+
+
+.btn-register{
+    background: grey;
+    padding: 10px;
+    transition: background 0.6s;
+}
+.btn-register:hover{
+    background: rgb(80, 80, 80) ;
+}
+
+/* nav */
+
+#menu{
+    display: none;
+}
+
+.linea{
+    display: none;
+}
+
+nav > ul{
+    list-style: none;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    
+    
+}
+
+
+nav > ul > li > a{
+    text-decoration: none;
+    display: inline-block;
+    background: green;
+    color: white;
+    transition: background 0.6s;
+    border-right: 2px solid white;
+    padding: 10px 20px;
+}
+
+nav > ul > li > a:hover{
+    background:rgb(0, 66, 0);
+}
+
+/* sublista nav */
+
+.localidad{
+    position: relative;
+}
+
+.list-localidades{
+    position: absolute;
+    flex-direction: column;
+    background: gray;
+    width: 100%;
+    text-align: center;
+    z-index: 1;
+    display: none;
+}
+
+.list-localidades > li{
+    padding: 10px 0;
+    list-style: none;
+}
+
+.list-localidades > li > a{
+    text-decoration: none;
+    color: white;
+}
+
+.localidad:hover .list-localidades{
+    display: block;
+}
+
+/* section */
+
+section{
+    margin-top: 20px;
+}
+
+/* categorias */
+
+.categorias{
+    margin-bottom: 20px;
+}
+.categorias h1{
+    text-align: center;
+    color: rgb(168, 168, 168);
+    background: rgb(0, 41, 41);
+    box-shadow: 0 0 15px black;
+    padding: 7px;
+    margin: 40px 0 15px;
+}
+
+/* articulos */
+
+article{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+    width: 95%;
+    margin: auto;
+    
+}
+.comercios{
+    position: relative;
+    text-align: center;
+    background: rgb(3, 46, 46);
+    box-shadow: 0 0 15px;
+    padding-bottom: 10px;
+}
+article .comercios h2{
+    background: rgb(0, 54, 54);
+    color: rgb(194, 194, 194);
+    padding: 10px 0;
+    font-size: 30px;
+    box-shadow: 0 0 5px black;
+}
+article .comercios p{
+    color: wheat;
+    padding: 10px;
+}
+
+.comercios > h3 > a{
+    text-decoration: none;
+    font-size: 23px;
+    color:rgb(177, 33, 33);
+}
+.comercios > a{
+    display: block;
+    color: grey;
+    padding: 10px 0;
+}
+
+.btn-localidad{
+    text-decoration: none;
+    color: gray ;
+}
+.comercios > img{
+    width: 100%;
+    margin: 10px 0;
+}
+
+/* seccion de los producos seccion-comercios */
+
+.contenedor-seccion-comercios{
+    display: grid;
+    grid-template-columns: 85% 15%;
+    gap: 10px;
+}
+
+.contenedor-producots > h1{
+    text-align: center;
+    color: rgb(168, 168, 168);
+    background: rgb(0, 41, 41);
+    box-shadow: 0 0 15px black;
+    padding: 7px;
+    margin: 40px 0 15px;
+    font-size: 30px;
+}
+
+.articulo-productos{
+    display: grid;
+    grid-template-columns: repeat(5,1fr) ;
+    gap: 20px;
+}
+
+.lista-productos{
+    background: rgb(4, 36, 36);
+    box-shadow: 0 0 15px black;
+    padding: 5px;
+    text-align: center;
+    color: rgb(173, 173, 173);
+    padding-bottom: 10px;
+    cursor: pointer;
+    
+}
+
+.lista-productos > img{
+    width: 100%;
+    object-fit: cover;
+    box-shadow: 0 0 15px black;
+}
+
+.lista-productos >h3{
+    font-size: 20px;
+    padding: 10px 0;
+}
+
+.lista-productos > h2{
+    display: block;
+    color: green;
+    background: wheat;
+    border-radius: 20px;
+    width: 55%;
+    padding: 5px 0;
+    margin: auto;
+}
+
+
+.aside-comercios{
+    background: rgb(2, 44, 44);
+    padding: 5px;
+    margin-top: 60px;
+    box-shadow: 0 0 10px;
+}
+
+.aside-comercios > .barra-lateral{
+    margin-top: 20px;
+    text-align: center;
+}
+.aside-comercios > .barra-lateral > ul{
+    display: flex;
+    flex-direction: column;
+}
+
+.aside-comercios > .barra-lateral h2{
+    color: rgb(167, 167, 167);
+    padding-bottom: 5px;
+    border-bottom: 1px solid white;
+}
+
+.aside-comercios > .barra-lateral > ul > li{
+    list-style: none;
+}
+.aside-comercios > .barra-lateral > ul > li > a{
+    display: block;
+    text-decoration: none;
+    color: gray;
+    padding: 10px 0;
+}
+
+/*  footer */
+footer{
+    clear: both;
+}
+
+footer h3{
+    text-align: center;
+    color: white;
+    padding: 10px 0;
+
+}
+
+
+/* section perfil */
+
+.section-perfil > h1{
+    color: rgb(190, 190, 190);
+    background: rgb(3, 59, 59);
+    box-shadow: 0 0 15px black;
+    padding: 5px;
+}
+.list-comercios{
+    margin: 20px auto;
+    display: flex;
+    background: gray;
+    align-items: center;
+    width: 90%;
+    padding: 10px;
+}
+
+
+.list-comercios > .botones-comercio{
+    margin-left: auto;
+  
+}
+
+.list-comercios > .botones-comercio > .btn-editar{
+    padding: 5px;
+    background: goldenrod;
+    color: black;
+    text-decoration: none;
+    
+}
+.list-comercios > .botones-comercio > .btn-eliminar{
+    padding: 5px;
+    background: rgb(112, 9, 9);
+    color: white;
+    text-decoration: none;
+    
+}
+.list-comercios > .botones-comercio > .btn-agregar{
+    padding: 5px;
+    background: green;
+    color: white;
+    text-decoration: none;
+    
+}
+
+.section-perfil > .list-comercios > h2{
+    color: black;
+
+}
+.section-perfil > h3{
+    text-align: center;
+    color: rgb(190, 190, 190);
+    margin: 10px auto;
+
+}
+
+.vista-productos{
+    width: 88%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 10px;
+}
+
+.lista-productos-perfil{
+    position: relative;
+    background: rgb(4, 36, 36);
+    box-shadow: 0 0 15px black;
+    padding: 5px;
+    text-align: center;
+    color: rgb(173, 173, 173);
+    padding-bottom: 10px;
+    cursor: pointer;
+    
+}
+
+.lista-productos-perfil > img{
+    width: 100%;
+    object-fit: cover;
+    box-shadow: 0 0 15px black;
+}
+
+.lista-productos-perfil >h3{
+    font-size: 20px;
+    padding: 10px 0;
+}
+
+.lista-productos-perfil > h2{
+    display: block;
+    color: green;
+    background: wheat;
+    border-radius: 20px;
+    width: 55%;
+    padding: 5px 0;
+    margin: auto;
+}
+
+.lista-productos-perfil > a{
+    position: absolute;
+    background:rgb(112, 9, 9) ;
+    padding: 5px;
+    text-decoration: none;
+    color: white;
+    top: 0;
+    right: 0;
+}
+
+
+
+/* seccion editar perfil */
+.section-editarPerfil{
+    height: 100vh;
+}
+.section-editarPerfil form{
+    text-align: center;
+    
+}
+
+.section-editarPerfil form h2{
+    color: rgb(202, 202, 202);
+    padding: 10px 0;
+}
+
+.section-editarPerfil form button{
+    display: inline-block;
+    margin: 20px 0;
+    padding: 10px;
+}
+
+.section-editarPerfil > form input{
+    text-decoration: none;
+    border: none;
+    padding: 10px;
+    background: green;
+}
+
+.cont-img{
+    position: relative;
+}
+
+.perfiladit-img{
+    display: inline-block;
+    width: 250px;
+    height: 250px;
+    box-shadow: 0 0 15px;
+    
+}
+
+#img-previw > img{
+    display: inline-block;
+    width: 250px;
+    height: 250px;
+    box-shadow: 0 0 15px;
+}
+#img-previw{
+    position: absolute;
+    top: 0%;
+}
+
+.cont-img{
+    display: inline-block;
+    position: relative;
+}
+
+.btn-edit-img{
+    display: inline-block;
+    width: 250px;
+    background: rgba(1, 32, 32, 0.932);
+    margin: 20px 0;
+    position: absolute;
+    top: 190px;
+    left: 0%;
+}
+.btn-edit-img:hover{
+    background: rgba(3, 24, 24, 0.973);
+}
+
+.btn-edit-img > input{
+    display: inline-block;
+    padding: 10px 0;
+    width: 100% ;
+    height: 20px;
+    border-style: none;
+    opacity: 0;
+}
+
+.btn-edit-img p{
+    color: white ;
+    position: absolute;
+    width: 100%;
+    top: 10px;
+
+}
+
+
+/* section add comercio */
+.sectin-add-comercio{
+    margin-top:20px ;
+}
+
+.sectin-add-comercio > form{
+    display:flex;
+    flex-direction: column;
+    text-align: center;
+    width: 40%;
+    margin: auto;
+    background: rgb(16, 90, 90);
+    padding: 20px;
+}
+
+.sectin-add-comercio > form > input{
+    display: block;
+    color: white;
+    background: rgb(1, 48, 48);
+    padding: 10px;
+    border-style: none;
+}
+.sectin-add-comercio > form > label{
+    display: block;
+    color: white;
+    padding: 10px;
+}
+.sectin-add-comercio > form > button{
+    padding: 5px;
+    margin: 10px 0;
+    background: green;
+    border-style: none;
+    color: white;
+}
+
+/* seccion de por localidad */
+
+.por_localidad-categorias{
+    margin-bottom: 20px;
+}
+.por_localidad-categorias > h1{
+    text-align: center;
+    color: rgb(168, 168, 168);
+    background: rgb(0, 41, 41);
+    box-shadow: 0 0 15px black;
+    padding: 7px;
+    margin: 40px 0 15px;
+}
+
+
+article{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+    width: 95%;
+    margin: auto;
+    
+}
+.por_localidad-comercios{
+    position: relative;
+    text-align: center;
+    background: rgb(3, 46, 46);
+    box-shadow: 0 0 15px;
+    padding-bottom: 10px;
+}
+article .por_localidad-comercios > h2{
+    background: rgb(0, 54, 54);
+    color: rgb(194, 194, 194);
+    padding: 10px 0;
+    font-size: 30px;
+    box-shadow: 0 0 5px black;
+}
+
+.por_localidad-comercios h4{
+    padding: 5px 0;
+    color: gray 
+}
+
+article .por_localidad-comercios > p{
+    color: wheat;
+    padding: 10px;
+}
+
+.por_localidad-comercios > h3 > a{
+    text-decoration: none;
+    font-size: 23px;
+    color:rgb(177, 33, 33);
+}
+.por_localidad-comercios > a{
+    display: block;
+    color: grey;
+    padding: 10px 0;
+}
+
+.por_localidad-comercios > .btn-localidad{
+    text-decoration: none;
+    color: gray ;
+}
+.por_localidad-comercios > img{
+    width: 200px;
+    margin: 10px 0;
+}
+
+/* seccion de por comercio */
+
+.por-comercio-categorias{
+    margin-bottom: 20px;
+}
+.por-comercio-categorias > h1{
+    text-align: center;
+    color: rgb(168, 168, 168);
+    background: rgb(0, 41, 41);
+    box-shadow: 0 0 15px black;
+    padding: 7px;
+    margin: 40px 0 15px;
+}
+
+
+article{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+    width: 95%;
+    margin: auto;
+    
+}
+.por-comercio-comercios{
+    position: relative;
+    text-align: center;
+    background: rgb(3, 46, 46);
+    box-shadow: 0 0 15px;
+    padding-bottom: 10px;
+}
+article .por-comercio-comercios > h2{
+    background: rgb(0, 54, 54);
+    color: rgb(194, 194, 194);
+    padding: 10px 0;
+    font-size: 30px;
+    box-shadow: 0 0 5px black;
+}
+
+.por-comercio-comercios h4{
+    padding: 5px 0;
+    color: gray 
+}
+
+article .por-comercio-comercios > p{
+    color: wheat;
+    padding: 10px;
+}
+
+.por-comercio-comercios > h3 > a{
+    text-decoration: none;
+    font-size: 23px;
+    color:rgb(177, 33, 33);
+}
+.por-comercio-comercios > a{
+    display: block;
+    color: grey;
+    padding: 10px 0;
+}
+
+.por-comercio-comercios > .btn-localidad{
+    text-decoration: none;
+    color: gray ;
+}
+.por-comercio-comercios > img{
+    width: 200px;
+    margin: 10px 0;
+}
+
+
+
+/* Adaptado a tablets */
+
+@media screen and (max-width: 720px){
+    article{
+        grid-template-columns: 1fr 1fr;   
+    }
+    .articulo-productos{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 10px;
+    }
+    .contenedor-seccion-comercios{
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    section{
+        margin-top: 0px;
+    }
+    .contenedor-producots > h1{
+  
+        padding: 7px;
+        margin: 20px 0 15px;
+    }
+
+    .contenedor-seccion-comercios > section{
+        width: 100%;
+    }
+    .aside-comercios{
+        background: rgb(2, 44, 44);
+        margin-top: 40px;
+        box-shadow: 0 0 10px;
+        top: 0%;
+        left: 0;
+        
+    }
+    .aside-comercios > .barra-lateral > ul{
+        margin-top: 10px;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        gap: 5px;
+    }
+    .aside-comercios > .barra-lateral > ul > li > a{
+        padding: 0 10px;
+    }
+
+    /* sectin-add-comercio */
+
+    .sectin-add-comercio > form{
+        width: 70%;
+    }
+
+    /* seccion comercio */
+
+    .vista-productos{
+        width: 88%;
+        margin: auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+    footer{
+        clear: both;
+    }
+}
+
+/* Adaptadap a mobil */
+
+@media screen and (max-width:520px){
+    article{
+        grid-template-columns: 1fr;   
+    }
+    .articulo-productos{
+        display: grid;
+        grid-template-columns: 1fr ;
+        gap: 10px;
+    }
+    .aside-comercios > .barra-lateral > ul{
+        margin-top: 10px;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: 5px;
+    }
+    .aside-comercios > .barra-lateral > ul > li > a{
+        padding: 0 10px;
+    }
+    /* seccion header login registro*/
+    header{
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background: rgb(3, 46, 46);
+        box-shadow: 0 0 20px;
+    }
+    header h1{
+        color: rgb(219, 219, 219);
+        padding: 0;
+        font-size: 23px;
+        padding: 10px 5px;
+    }
+
+    .usuarios{
+        padding: 3px;
+    }
+
+    .perfil-img{
+        width: 40px;
+        height: 40px;
+        border-radius: 20px;
+        margin: 0 10px;
+    }
+
+    .menu-perfil{
+        position: absolute;
+        background: rgb(0, 59, 59);
+        list-style: none;
+        width: 150%;
+        padding: 5% 10% 5%  ;
+        top: 45px;
+        left: -60px;
+        box-shadow: 0 0 15px;
+        z-index: 1;
+        display: none;
+    }
+
+    .btn-login{
+        display: inline-block;
+        background: rgb(0, 167, 0);
+        padding: 5px;
+        font-size: 15px;
+        transition: background 0.6s;
+        margin-bottom: 5px;
+        
+    }
+   
+    
+    
+    .btn-register{
+        display: inline-block;
+        background: grey;
+        padding: 5px ;
+        font-size: 15px;
+        margin-bottom: 5px;
+        transition: background 0.6s;
+    }
+
+    /* nav */
+    
+    .linea{
+        display: block;
+        background: rgb(11, 46, 46);
+        width: 100%;
+        height: 8px;
+        border: 1px solid gray;
+    }
+
+
+    #menu{
+        display: block;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+    }
+
+    nav > ul{
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+        
+    }
+    nav{
+        position: relative;
+        background: rgb(13, 58, 58);
+        height: 30px;
+        width: 30px;
+        border: 2px solid rgb(0, 0, 0);
+        top: -40px;
+        left: 3px;
+    }
+    nav > ul{
+        position: absolute;
+        width: 400%;
+        left: 32px;
+        top: 40px;
+        left: -200px;
+        z-index: 1;
+        transition: left 0.6s;
+    }
+    nav > ul > li{
+        width: 100%;
+        border-left: 0;
+        border-bottom: 1px solid white;
+    }
+
+    nav > ul > li > a{
+        text-decoration: none;
+        display: block;
+        background: green;
+        color: white;
+        border: 0;
+        padding: 10px 0;
+        transition: background 0.6s;
+    }
+
+    #menu:checked ~ ul{
+        left: 0;
+    }
+
+    /* sectin-add-comercio */
+
+    .sectin-add-comercio > form{
+  
+        width: 90%;
+    }
+
+    /*  seccion mi comercio */
+    .list-comercios{
+        margin: 20px auto;
+        display: grid;
+        grid-template-columns: 40% 60%;
+        background: gray;
+        align-items: center;
+        width: 90%;
+        padding: 10px;
+    }
+
+    .vista-productos{
+        width: 88%;
+        margin: auto;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .botones-comercio{
+        display: grid;
+        grid-row: 1fr 1fr 1fr;
+        gap: 5px;
+    }
+    footer{
+        clear: both;
+    }
+
+}

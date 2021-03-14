@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     {% load static %}
     <meta charset="UTF-8">
@@ -41,12 +41,16 @@
         </div>
     </header>
     <nav>
+        <div class="linea"></div>
+        <div class="linea"></div>
+        <div class="linea"></div>
+        <input type="checkbox" id="menu" >
         <ul>
-            <li><a href="{% url 'home' %}">Inicio</a></li>
-            <li class="localidad"><a href="{% url 'localidades' %}">Localidades</a></li>
-            <li><a href="{% url 'comercios'  %}">Comercios</a></li>
-            <li><a href="{% url 'info'  %}">info</a></li>
-            <li><a href="{% url 'contactanos'  %}">Contactanos</a></li>
+            <li><a  class="home-{% if request.path == '/' %}avtiva{% endif %}" href="{% url 'home' %}">Inicio</a></li>
+            <li ><a class="localidad-{% if request.path == '/Localidades' %}avtiva{% endif %}"  href="{% url 'localidades' %}">Localidades</a></li>
+            <li><a  class="comercios-{% if request.path == '/comercios' %}avtiva{% endif %}" href="{% url 'comercios'  %}">Comercios</a></li>
+            <li><a  class="info-{% if request.path == '/info' %}avtiva{% endif %}" href="{% url 'info'  %}">info</a></li>
+            <li><a  class="contactanos-{% if request.path == '/contactanos' %}avtiva{% endif %}" href="{% url 'contactanos'  %}">Contactanos</a></li>
         </ul>
     </nav>
 
@@ -57,7 +61,7 @@
         <h3>&copy; 2021 Gestion Comercios</h3>
          {% block script %}
 
-    {% endblock %}
+        {% endblock %}
     </footer>
    
 </body>

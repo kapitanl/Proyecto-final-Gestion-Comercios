@@ -130,10 +130,12 @@ def editar_comercio(request, id):
 
 
 def eliminar_comercio(request, id):
-    comercio = PostDeComerciosForms.objects.get(id=id)
-    comercio.delete()
-    return redirect('perfil')
-
+    if request.user.is_authenticated:
+        comercio = PostDeComerciosForms.objects.get(id=id)
+        comercio.delete()
+        return redirect('perfil')
+    else:
+        return redirect('login')
 def add_productos(request, id):
     if request.user.is_authenticated:
         # imagen de perfil 
@@ -148,5 +150,13 @@ def add_productos(request, id):
                 comercio.save()
                 return redirect('perfil')
         return render(request, 'add_productos.html',{'img':img_perfil, 'form':form})
+    else:
+        return redirect('login')
+
+def eliminar_producto(request, id):
+    if request.user.is_authenticated or request.get(404):
+        producto = ProductosForms.objects.get(id=id)
+        producto.delete()
+        return redirect('perfil')
     else:
         return redirect('login')
