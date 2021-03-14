@@ -4,8 +4,9 @@
 {% block section %}
 
 <div class="seccion-contactanos">
-   <form action="contactanos" method="POST"> 
+   <form action="contactanos" method="POST">
        {% csrf_token %}
+       <h1>{{mensaje}}</h1>
         <label for="">Asunto:</label>
         <input type="text" name="asunto">
         <label for="">Email:</label>
