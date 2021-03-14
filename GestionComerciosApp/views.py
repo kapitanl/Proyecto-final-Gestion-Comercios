@@ -82,6 +82,17 @@ def contactanos(request):
             if miFormulario.is_valid():
                 inf_formulario= miFormulario.cleaned_data
                 send_mail(inf_formulario["asunto"], inf_formulario["mensaje"], inf_formulario.get("email"," "),["gestioncomercioprueba@gmail.com"],)
+                return render(request, "mensaje.html",{'img':img_perfil})
+        else:
+            miFormulario= FormulariosDeContactos()
+          
+        return render(request, "contactanos.html", {"miformulario":miFormulario,'img':img_perfil})
+    else:
+        if request.method=="POST":
+            miFormulario = FormulariosDeContactos(request.POST)
+            if miFormulario.is_valid():
+                inf_formulario= miFormulario.cleaned_data
+                send_mail(inf_formulario["asunto"], inf_formulario["mensaje"], inf_formulario.get("email"," "),["gestioncomercioprueba@gmail.com"],)
                 return render(request, "mensaje.html")
         else:
             miFormulario= FormulariosDeContactos()

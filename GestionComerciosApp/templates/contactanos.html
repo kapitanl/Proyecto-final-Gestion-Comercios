@@ -3,20 +3,18 @@
 
 {% block section %}
 
-<div class="contactanos">
-    <h1>Contactanos</h1>
+<div class="seccion-contactanos">
    <form action="contactanos" method="POST"> 
        {% csrf_token %}
+        <label for="">Asunto:</label>
+        <input type="text" name="asunto">
+        <label for="">Email:</label>
+        <input type="email" name="email">
+        <label for="">Mensaje:</label>
+        
+        <textarea name="mensaje" id="" cols="30" rows="10"></textarea>
 
-       <p>Asunto:<input type="text" name="asunto"></p>
-
-       <p>Email:<input type="email" name="email"></p>
-
-       <div>
-           <p>Mensaje:<textarea name="mensaje" rows="15" cols="45"></textarea></p>
-       </div>
-
-       <input type="submit" name="Enviar">
+        <button type="submit" >Enviar</button>
 </div>
        
 {% endblock %}

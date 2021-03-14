@@ -561,6 +561,43 @@ footer h3{
     color: white;
 }
 
+/* seccion contactanos */
+
+.seccion-contactanos{
+    margin-top:20px ;
+}
+
+.seccion-contactanos > form{
+    display:flex;
+    flex-direction: column;
+    text-align: center;
+    width: 40%;
+    margin: auto;
+    background: rgb(16, 90, 90);
+    padding: 20px;
+}
+
+.seccion-contactanos > form > input{
+    display: block;
+    color: white;
+    background: rgb(1, 48, 48);
+    padding: 10px;
+    border-style: none;
+}
+.seccion-contactanos > form > label{
+    display: block;
+    color: white;
+    padding: 10px;
+}
+.seccion-contactanos > form > button{
+    padding: 5px;
+    margin: 10px 0;
+    background: green;
+    border-style: none;
+    color: white;
+}
+
+
 /* seccion de por localidad */
 
 .por_localidad-categorias{
