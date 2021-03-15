@@ -3,7 +3,12 @@
 
 {% block section %}
 <div class = "info">
+    
+    {% if mensaje %}
+    <h1>{{ mensaje }}</h1> 
+    {% else %}
     <h1>Correo enviado</h1>
+    {% endif %}
 </div>
 
 {% endblock %}

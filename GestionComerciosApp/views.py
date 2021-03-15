@@ -83,6 +83,10 @@ def contactanos(request):
                 inf_formulario= miFormulario.cleaned_data
                 send_mail(inf_formulario["asunto"], inf_formulario["mensaje"], inf_formulario.get("email"," "),["gestioncomercioprueba@gmail.com"],)
                 return render(request, "mensaje.html",{'img':img_perfil})
+            else:
+                mensaje = 'No se a podido enviar, verifique su correo electronico.'
+                miFormulario = FormulariosDeContactos()
+                return render(request, "contactanos.html",{"miformulario":miFormulario,'mensaje':mensaje})
         else:
             miFormulario= FormulariosDeContactos()
           
@@ -94,6 +98,10 @@ def contactanos(request):
                 inf_formulario= miFormulario.cleaned_data
                 send_mail(inf_formulario["asunto"], inf_formulario["mensaje"], inf_formulario.get("email"," "),["gestioncomercioprueba@gmail.com"],)
                 return render(request, "mensaje.html")
+            else:
+                mensaje = 'No se a podido enviar, verifique su correo electronico.'
+                miFormulario = FormulariosDeContactos()
+                return render(request, "contactanos.html",{"miformulario":miFormulario,'mensaje':mensaje})
         else:
             miFormulario= FormulariosDeContactos()
           

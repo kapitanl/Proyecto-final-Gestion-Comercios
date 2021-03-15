@@ -154,7 +154,7 @@ def add_productos(request, id):
         return redirect('login')
 
 def eliminar_producto(request, id):
-    if request.user.is_authenticated or request.get(404):
+    if request.user.is_authenticated:
         producto = ProductosForms.objects.get(id=id)
         producto.delete()
         return redirect('perfil')

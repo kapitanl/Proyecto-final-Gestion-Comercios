@@ -10,6 +10,11 @@ body{
     margin: auto;
 }
 
+
+
+
+
+
 /* header */
 
 header{
@@ -24,6 +29,10 @@ header h1{
     color: rgb(219, 219, 219);
     padding: 1%;
 }
+
+
+
+
 
 
 
@@ -96,6 +105,11 @@ header h1{
     background: rgb(80, 80, 80) ;
 }
 
+
+
+
+
+
 /* nav */
 
 #menu{
@@ -130,6 +144,11 @@ nav > ul > li > a:hover{
     background:rgb(0, 66, 0);
 }
 
+
+
+
+
+
 /* sublista nav */
 
 .localidad{
@@ -160,13 +179,12 @@ nav > ul > li > a:hover{
     display: block;
 }
 
-/* section */
 
-section{
-    margin-top: 20px;
-}
 
-/* categorias */
+
+
+
+/* seccion home */
 
 .categorias{
     margin-bottom: 20px;
@@ -180,7 +198,6 @@ section{
     margin: 40px 0 15px;
 }
 
-/* articulos */
 
 article{
     display: grid;
@@ -226,8 +243,14 @@ article .comercios p{
 }
 .comercios > img{
     width: 100%;
-    margin: 10px 0;
+    height: 250px;
+    object-fit: cover;
 }
+
+
+
+
+
 
 /* seccion de los producos seccion-comercios */
 
@@ -244,19 +267,19 @@ article .comercios p{
     box-shadow: 0 0 15px black;
     padding: 7px;
     margin: 40px 0 15px;
-    font-size: 30px;
+    font-size: 1.9rem;
 }
 
 .articulo-productos{
     display: grid;
-    grid-template-columns: repeat(5,1fr) ;
+    grid-template-columns: repeat(4,1fr) ;
     gap: 20px;
 }
 
 .lista-productos{
     background: rgb(4, 36, 36);
     box-shadow: 0 0 15px black;
-    padding: 5px;
+    padding: 1%;
     text-align: center;
     color: rgb(173, 173, 173);
     padding-bottom: 10px;
@@ -265,9 +288,11 @@ article .comercios p{
 }
 
 .lista-productos > img{
+    display: block;
     width: 100%;
+    height: 230px;
     object-fit: cover;
-    box-shadow: 0 0 15px black;
+    
 }
 
 .lista-productos >h3{
@@ -283,13 +308,14 @@ article .comercios p{
     width: 55%;
     padding: 5px 0;
     margin: auto;
+    font-size: 1.5em;
 }
 
 
 .aside-comercios{
     background: rgb(2, 44, 44);
     padding: 5px;
-    margin-top: 60px;
+    margin-top:40px;
     box-shadow: 0 0 10px;
 }
 
@@ -318,6 +344,12 @@ article .comercios p{
     padding: 10px 0;
 }
 
+
+
+
+
+
+
 /*  footer */
 footer{
     clear: both;
@@ -331,13 +363,23 @@ footer h3{
 }
 
 
+
+
+
+
+
 /* section perfil */
+
+.section-perfil{
+    margin-top: 30px;
+}
 
 .section-perfil > h1{
     color: rgb(190, 190, 190);
     background: rgb(3, 59, 59);
     box-shadow: 0 0 15px black;
     padding: 5px;
+
 }
 .list-comercios{
     margin: 20px auto;
@@ -440,6 +482,10 @@ footer h3{
 
 
 
+
+
+
+
 /* seccion editar perfil */
 .section-editarPerfil{
     height: 100vh;
@@ -526,6 +572,10 @@ footer h3{
 }
 
 
+
+
+
+
 /* section add comercio */
 .sectin-add-comercio{
     margin-top:20px ;
@@ -560,6 +610,10 @@ footer h3{
     border-style: none;
     color: white;
 }
+
+
+
+
 
 /* seccion contactanos */
 
@@ -596,6 +650,11 @@ footer h3{
     border-style: none;
     color: white;
 }
+
+
+
+
+
 
 
 /* seccion de por localidad */
@@ -666,6 +725,11 @@ article .por_localidad-comercios > p{
     margin: 10px 0;
 }
 
+
+
+
+
+
 /* seccion de por comercio */
 
 .por-comercio-categorias{
@@ -735,6 +799,11 @@ article .por-comercio-comercios > p{
 }
 
 
+
+
+
+
+
 /* url nav avtiva */
 
 .home-avtiva{
@@ -758,9 +827,13 @@ article .por-comercio-comercios > p{
 }
 
 
+
+
+
+
 /* Adaptado a tablets */
 
-@media screen and (max-width: 720px){
+@media screen and (max-width: 1024px){
     article{
         grid-template-columns: 1fr 1fr;   
     }
@@ -823,6 +896,11 @@ article .por-comercio-comercios > p{
     }
 }
 
+
+
+
+
+
 /* Adaptadap a mobil */
 
 @media screen and (max-width:520px){
@@ -837,7 +915,7 @@ article .por-comercio-comercios > p{
     .aside-comercios > .barra-lateral > ul{
         margin-top: 10px;
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-columns: repeat(4, 1fr);
         gap: 5px;
     }
     .aside-comercios > .barra-lateral > ul > li > a{
@@ -1003,6 +1081,16 @@ article .por-comercio-comercios > p{
     }
     footer{
         clear: both;
+    }
+
+    /* seccion comercio  */
+
+    .lista-productos > img{
+        display: block;
+        width: 100%;
+        height: auto;
+        object-fit:contain;
+        box-shadow: none;
     }
 
 }
